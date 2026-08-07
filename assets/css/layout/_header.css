@@ -17,7 +17,7 @@
 
 .site-header__inner {
   display: grid;
-  grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   height: 100%;
 }
@@ -78,7 +78,7 @@
 @media (max-width: 900px) {
   .site-header--menu-open { z-index: var(--z-modal); }
 
-  .site-header__inner { grid-template-columns: 1fr auto; }
+  .site-header__inner { grid-template-columns: minmax(0, 1fr) auto; }
   .header-contact { display: none; }
 
   .site-header__toggle {

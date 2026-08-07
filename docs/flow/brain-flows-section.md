@@ -1,6 +1,6 @@
 ---
 generated_at: 2026-08-07
-source_commit: ebcd499
+source_commit: 51bd88f
 source_state: dirty
 verified_at: 2026-08-07
 status: current
@@ -15,7 +15,7 @@ related_plans: []
 
 A navegação interna, o rodapé e o conteúdo principal de `index.html` apontam para a seção `#brain-flows`. Dentro dela, um card apresenta o repositório e o comando de instalação, enquanto uma lista ordenada descreve as cinco skills do workflow.
 
-O stylesheet do componente define a grade de duas colunas em telas largas e a converte em uma única coluna até 1024px para que o card e a lista não ultrapassem a largura disponível. Em telas até 540px, o card reduz o espaçamento interno e o comando passa a empilhar código e botão.
+O stylesheet do componente define a grade de duas colunas em telas largas e a converte em uma única coluna `minmax(0, 1fr)` até 1024px para que o card e a lista não ultrapassem a largura disponível. Em telas até 540px, o card reduz o espaçamento interno, o comando passa a empilhar código e botão e o próprio comando quebra em várias linhas em vez de ser cortado com reticências.
 
 Quando o DOM termina de carregar, `main.js` ativa o botão de cópia. O conteúdo permanece utilizável sem JavaScript: o comando continua visível e o link do GitHub segue acessível; apenas o botão de copiar fica oculto sem a classe `js` no elemento raiz.
 
@@ -24,9 +24,9 @@ Quando o DOM termina de carregar, `main.js` ativa o botão de cópia. O conteúd
 1. **Estrutura da página** — `index.html` → seção `#brain-flows`
    Carrega o stylesheet do componente na ordem do cascade e renderiza o destaque do repositório, o comando, o link externo e a lista das cinco skills.
 2. **Layout responsivo** — `assets/css/components/_brain-flows.css` → `.brain-layout`
-   Organiza o destaque e a lista em duas colunas acima de 1024px; no breakpoint, usa uma única coluna para preservar a largura do conteúdo.
+   Organiza o destaque e a lista em duas colunas acima de 1024px; no breakpoint, usa uma única coluna `minmax(0, 1fr)` — o mínimo explícito impede que o `min-content` do comando (que usa `white-space: nowrap`) estique a coluna e provoque rolagem horizontal na página.
 3. **Ajustes compactos** — `assets/css/components/_brain-flows.css` → regras até 540px
-   Reduz o padding do destaque, aplica o token tipográfico compacto ao título e empilha os elementos de `.brain-command`.
+   Reduz o padding do destaque, aplica o token tipográfico compacto ao título, empilha os elementos de `.brain-command` e libera a quebra do comando com `white-space: normal` e `overflow-wrap: anywhere`.
 4. **Inicialização de comportamentos** — `assets/js/main.js` → `DOMContentLoaded`
    Chama `initReveal()` para os elementos marcados com `data-reveal` e `initCommandCopy()` para o botão identificado por `data-copy`.
 5. **Cópia do comando** — `assets/js/main.js` → `initCommandCopy()`

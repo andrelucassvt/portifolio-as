@@ -155,7 +155,7 @@
 
 .skill-item {
   display: grid;
-  grid-template-columns: 2.5rem 1fr;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
   gap: var(--space-300);
   padding-block: var(--space-400);
   border-top: 0.0625rem solid var(--color-border);
@@ -189,7 +189,7 @@
 
 @media (max-width: 1024px) {
   .brain-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -205,5 +205,14 @@
   .brain-command {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  /* Em telas estreitas o comando quebra em várias linhas em vez de ser
+     cortado com reticências. */
+  .brain-command code {
+    overflow: visible;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
   }
 }

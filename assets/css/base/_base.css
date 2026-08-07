@@ -1,9 +1,14 @@
 html {
   scroll-padding-top: var(--header-height);
+  /* `clip` (em vez de `hidden`) impede o pan lateral no iOS Safari sem
+     transformar o documento em contêiner de rolagem. */
+  overflow-x: clip;
 }
 
 body {
   overflow-x: hidden;
+  overflow-x: clip;
+  overflow-wrap: break-word;
   font-family: var(--font-body);
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
