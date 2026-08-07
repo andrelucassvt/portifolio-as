@@ -1,0 +1,39 @@
+/* ==========================================================================
+   UTILITIES — classes de uso pontual. Sempre vêm por último no cascade
+   para poderem sobrescrever componentes quando necessário.
+   Usar com moderação: se um padrão se repete 3+ vezes, considerar virar
+   componente em vez de empilhar utilities.
+   ========================================================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}

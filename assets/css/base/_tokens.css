@@ -1,0 +1,83 @@
+/* ==========================================================================
+   TOKENS — Design tokens (fonte única de verdade para valores visuais)
+   Nada de valores "mágicos" espalhados pelo CSS: tudo referencia isto aqui.
+   ========================================================================== */
+
+:root {
+  /* -- Cor --------------------------------------------------------------
+     Placeholders. Substituir pelos valores finais da identidade visual
+     quando estiver definida. Manter a nomenclatura semântica abaixo. */
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-primary: #111111;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #3d5afe;
+  --color-border: #e0e0e0;
+
+  /* -- Tipografia ---------------------------------------------------------
+     Trocar as font stacks quando as fontes definitivas forem escolhidas. */
+  --font-heading: "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  --fs-100: 0.75rem;   /* 12px */
+  --fs-200: 0.875rem;  /* 14px */
+  --fs-300: 1rem;      /* 16px — base */
+  --fs-400: 1.25rem;   /* 20px */
+  --fs-500: 1.5rem;    /* 24px */
+  --fs-600: 2rem;      /* 32px */
+  --fs-700: 2.5rem;    /* 40px */
+  --fs-800: 3.5rem;    /* 56px */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --lh-tight: 1.15;
+  --lh-normal: 1.5;
+  --lh-loose: 1.8;
+
+  /* -- Espaçamento ---------------------------------------------------------
+     Escala em rem, base 8px. Usar sempre estas variáveis, nunca px soltos. */
+  --space-100: 0.5rem;   /* 8px */
+  --space-200: 0.75rem;  /* 12px */
+  --space-300: 1rem;     /* 16px */
+  --space-400: 1.5rem;   /* 24px */
+  --space-500: 2rem;     /* 32px */
+  --space-600: 3rem;     /* 48px */
+  --space-700: 4rem;     /* 64px */
+  --space-800: 6rem;     /* 96px */
+  --space-900: 8rem;     /* 128px */
+
+  /* -- Layout --------------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-padding: var(--space-400);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* -- Sombra --------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  /* -- Transição -------------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* -- Z-index (escala controlada, evita "z-index: 9999") ------------------- */
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}
+
+/* -- Breakpoints (referência — CSS não tem var() em media query, usar os
+   valores fixos abaixo diretamente em cada @media) --------------------------
+   sm: 480px
+   md: 768px
+   lg: 1024px
+   xl: 1280px
+*/

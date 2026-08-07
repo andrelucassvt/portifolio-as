@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AS Software — Portfólio</title>
+  <meta name="description" content="Portfólio da AS Software: projetos, serviços e contato.">
+
+  <!-- Ordem do cascade importa: tokens/reset/base primeiro, depois layout,
+       depois components, e utilities por último. -->
+  <link rel="stylesheet" href="assets/css/base/_tokens.css">
+  <link rel="stylesheet" href="assets/css/base/_reset.css">
+  <link rel="stylesheet" href="assets/css/base/_base.css">
+
+  <link rel="stylesheet" href="assets/css/layout/_container.css">
+  <link rel="stylesheet" href="assets/css/layout/_grid.css">
+  <link rel="stylesheet" href="assets/css/layout/_header.css">
+  <link rel="stylesheet" href="assets/css/layout/_footer.css">
+
+  <link rel="stylesheet" href="assets/css/components/_button.css">
+  <link rel="stylesheet" href="assets/css/components/_nav.css">
+  <link rel="stylesheet" href="assets/css/components/_card.css">
+
+  <link rel="stylesheet" href="assets/css/utilities/_utilities.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#hero" class="site-header__logo">AS Software</a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#servicos" class="nav__link">Serviços</a></li>
+          <li><a href="#projetos" class="nav__link">Projetos</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="site-header__toggle" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="section">
+      <div class="container">
+        <span class="section__eyebrow">AS Software</span>
+        <h1>Título de impacto sobre o que a AS Software faz</h1>
+        <p class="text-muted">Subtítulo curto explicando a proposta de valor.</p>
+        <a href="#contato" class="btn btn--primary">Fale conosco</a>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Sobre</span>
+          <h2>Quem é a AS Software</h2>
+        </div>
+        <p>Texto sobre a empresa.</p>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Serviços</span>
+          <h2>O que fazemos</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="card__title">Serviço 1</h3>
+            <p class="card__description">Descrição breve do serviço.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Serviço 2</h3>
+            <p class="card__description">Descrição breve do serviço.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Serviço 3</h3>
+            <p class="card__description">Descrição breve do serviço.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Projetos</span>
+          <h2>Trabalhos recentes</h2>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3 class="card__title">Projeto 1</h3>
+            <p class="card__description">Descrição breve do projeto.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Projeto 2</h3>
+            <p class="card__description">Descrição breve do projeto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Contato</span>
+          <h2>Vamos conversar</h2>
+        </div>
+        <a href="mailto:contato@assoftware.com" class="btn btn--primary">Enviar e-mail</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <small>&copy; 2026 AS Software. Todos os direitos reservados.</small>
+      <div class="site-footer__links">
+        <a href="#" class="nav__link">LinkedIn</a>
+        <a href="#" class="nav__link">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

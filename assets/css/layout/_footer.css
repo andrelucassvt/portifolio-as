@@ -1,0 +1,21 @@
+/* ==========================================================================
+   LAYOUT / Footer
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-600);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-300);
+}
+
+.site-footer__links {
+  display: flex;
+  gap: var(--space-400);
+}

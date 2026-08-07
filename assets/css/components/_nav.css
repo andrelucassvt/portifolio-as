@@ -1,0 +1,44 @@
+/* ==========================================================================
+   COMPONENT / Nav — .nav (base) + .nav__elemento + .nav--estado
+   ========================================================================== */
+
+.nav__list {
+  display: flex;
+  gap: var(--space-500);
+}
+
+.nav__link {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible,
+.nav__link--active {
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    inset: 0;
+    top: 64px;
+    background-color: var(--color-bg);
+    z-index: var(--z-overlay);
+    transform: translateY(-100%);
+    transition: transform var(--transition-base);
+  }
+
+  /* Estado controlado via JS: adiciona/remove esta classe no menu */
+  .nav--open {
+    transform: translateY(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    padding: var(--space-500);
+    gap: var(--space-400);
+  }
+}

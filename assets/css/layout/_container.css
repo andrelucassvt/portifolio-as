@@ -1,0 +1,36 @@
+/* ==========================================================================
+   LAYOUT / Container — envelope horizontal padrão de qualquer seção
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Seção: bloco vertical de página (hero, sobre, serviços, projetos...) */
+.section {
+  padding-block: var(--space-800);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-600);
+  }
+}
+
+.section__header {
+  margin-bottom: var(--space-600);
+  max-width: 60ch;
+}
+
+.section__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-200);
+}
