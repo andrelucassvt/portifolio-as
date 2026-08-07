@@ -30,6 +30,10 @@ git status --short
 
 git add -A
 git commit -m "$msg"
+
+# O GitHub commita arquivos no repo por conta própria (o CNAME, ao configurar
+# um domínio personalizado). Sem o rebase, o push seria rejeitado.
+git pull --rebase origin "$BRANCH"
 git push origin "$BRANCH"
 
 # O build do Pages é assíncrono; sem esperar, um curl logo após o push
