@@ -8,27 +8,31 @@ document.addEventListener("DOMContentLoaded", () => {
 function initMobileNav() {
   const toggle = document.querySelector("[data-nav-toggle]");
   const nav = document.querySelector("[data-nav]");
+  const header = document.querySelector("[data-header]");
+  const backdrop = document.querySelector("[data-nav-backdrop]");
 
   if (!toggle || !nav) return;
 
-  const closeMenu = () => {
-    nav.classList.remove("nav--open");
-    document.body.classList.remove("nav-open");
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Abrir menu");
-  };
-
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("nav--open");
+  const setMenuState = (isOpen) => {
+    nav.classList.toggle("nav--open", isOpen);
     document.body.classList.toggle("nav-open", isOpen);
+    header?.classList.toggle("site-header--menu-open", isOpen);
+    backdrop?.classList.toggle("nav-backdrop--visible", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
     toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  };
+
+  const closeMenu = () => setMenuState(false);
+
+  toggle.addEventListener("click", () => {
+    setMenuState(!nav.classList.contains("nav--open"));
   });
 
   nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  backdrop?.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && nav.classList.contains("nav--open")) {
       closeMenu();
       toggle.focus();
     }

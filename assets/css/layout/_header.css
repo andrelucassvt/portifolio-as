@@ -73,7 +73,11 @@
 
 .site-header__toggle { display: none; }
 
+.nav-backdrop { display: none; }
+
 @media (max-width: 900px) {
+  .site-header--menu-open { z-index: var(--z-modal); }
+
   .site-header__inner { grid-template-columns: 1fr auto; }
   .header-contact { display: none; }
 
@@ -98,4 +102,23 @@
 
   .site-header__toggle[aria-expanded="true"] span:first-child { transform: translateY(0.23rem) rotate(45deg); }
   .site-header__toggle[aria-expanded="true"] span:last-child { transform: translateY(-0.23rem) rotate(-45deg); }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-overlay);
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-bg);
+    transition: visibility var(--transition-base), opacity var(--transition-base);
+  }
+
+  .nav-backdrop--visible {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
 }
