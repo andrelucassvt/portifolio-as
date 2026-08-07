@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Portfólio AS Software",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4173",
       "webRoot": "${workspaceFolder}",
