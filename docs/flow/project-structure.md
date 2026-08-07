@@ -26,12 +26,12 @@ related_plans: []
 Uma única página (`index.html`) com seções em scroll. O CSS segue ITCSS em camadas carregadas em ordem fixa no `<head>` (do mais genérico ao mais específico), com nomenclatura BEM nos componentes e todos os valores visuais como variáveis CSS em tokens. O JS é um arquivo único (`assets/js/main.js`) com funções isoladas chamadas no `DOMContentLoaded`, sem dependências externas.
 
 ```
-index.html (seções: hero → capabilities → apps → plugins → sobre → contato)
+index.html (seções: hero → capabilities → apps → plugins → brain-flows → sobre → contato)
     ├── assets/css/base/      → tokens, reset, estilos globais de tags
     ├── assets/css/layout/    → container, grid, header, footer
-    ├── assets/css/components/→ button, nav, card, portfolio (BEM)
+    ├── assets/css/components/→ button, nav, card, portfolio, brain-flows (BEM)
     ├── assets/css/utilities/ → utilitários (sempre por último no cascade)
-    └── assets/js/main.js     → initMobileNav, initHeader, initReveal, setCurrentYear
+    └── assets/js/main.js     → initMobileNav, initHeader, initReveal, initCommandCopy, setCurrentYear
 ```
 
 ### Regras de dependência
@@ -44,7 +44,7 @@ index.html (seções: hero → capabilities → apps → plugins → sobre → c
 
 | Feature | Caminho principal | Descrição resumida |
 |---------|------------------|-------------------|
-| Página única do portfólio | `index.html` + `assets/css/components/_portfolio.css` | Seções em scroll: hero, capabilities, apps (4 cards com links de loja), plugins open source, sobre, contato |
+| Página única do portfólio | `index.html` + `assets/css/components/_portfolio.css` + `assets/css/components/_brain-flows.css` | Seções em scroll: hero, capabilities, apps (4 cards com links de loja), plugins open source, brain-flows (workflow de skills para agentes de IA, com destaque do repo + lista das 5 skills), sobre, contato |
 
 _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não módulos separados — ver "Camadas / Módulos Compartilhados"._
 
@@ -55,16 +55,16 @@ _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não m
 | Tokens | `assets/css/base/_tokens.css` | Variáveis CSS de cor, tipografia, espaçamento, breakpoints |
 | Base | `assets/css/base/_reset.css`, `_base.css` | Normalização e estilos globais de tags puras |
 | Layout | `assets/css/layout/` | Primitivos estruturais: `_container.css`, `_grid.css`, `_header.css`, `_footer.css` |
-| Componentes | `assets/css/components/` | Peças reutilizáveis BEM: `_button.css`, `_nav.css`, `_card.css`, `_portfolio.css` |
+| Componentes | `assets/css/components/` | Peças reutilizáveis BEM: `_button.css`, `_nav.css`, `_card.css`, `_portfolio.css`, `_brain-flows.css` |
 | Utilities | `assets/css/utilities/_utilities.css` | Classes utilitárias, últimas no cascade |
-| JS | `assets/js/main.js` | Único arquivo JS: nav mobile, header no scroll, reveal via IntersectionObserver, ano atual |
+| JS | `assets/js/main.js` | Único arquivo JS: nav mobile, header no scroll, reveal via IntersectionObserver, botão de copiar comando de instalação, ano atual |
 | Imagens | `assets/img/` | Favicon, hero (webp/png), og-cover, ícones dos apps em `apps/` |
 
 ## Configuração
 
 | Componente | Arquivo | Responsabilidade |
 |-----------|---------|-----------------|
-| Servidor local | `.vscode/tasks.json` | Task `Servir portfólio`: `python3 -m http.server 4173` em background |
+| Servidor local | `.vscode/tasks.json` | Task `Servir portfólio`: libera a porta 4173 (`lsof -ti tcp:4173 | xargs kill`) e sobe `python3 -m http.server 4173` em background |
 | Debug | `.vscode/launch.json` | Config `Portfólio AS Software`: abre Chrome em `http://localhost:4173` (F5) |
 | Domínio | `CNAME` | `andresalvador.com` (GitHub Pages) |
 | Deploy | `deploy.sh` | add/commit/push na `master`, aguarda build do Pages via `gh api` e confirma HTTP 200 |

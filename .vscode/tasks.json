@@ -3,13 +3,8 @@
   "tasks": [
     {
       "label": "Servir portfólio",
-      "type": "process",
-      "command": "python3",
-      "args": [
-        "-m",
-        "http.server",
-        "4173"
-      ],
+      "type": "shell",
+      "command": "lsof -ti tcp:4173 | xargs kill 2>/dev/null; python3 -m http.server 4173",
       "isBackground": true,
       "problemMatcher": {
         "owner": "portfolio",

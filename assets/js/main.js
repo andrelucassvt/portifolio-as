@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initHeader();
   initReveal();
+  initCommandCopy();
   setCurrentYear();
 });
 
@@ -73,6 +74,43 @@ function initReveal() {
   );
 
   elements.forEach((element) => observer.observe(element));
+}
+
+function initCommandCopy() {
+  const buttons = document.querySelectorAll("[data-copy]");
+  if (!buttons.length) return;
+
+  buttons.forEach((button) => {
+    const label = button.querySelector("span");
+    const defaultLabel = label ? label.textContent : "";
+    let timeout;
+
+    button.addEventListener("click", async () => {
+      const command = button.closest(".brain-command")?.querySelector("code")?.textContent.trim();
+      if (!command) return;
+
+      try {
+        await navigator.clipboard.writeText(command);
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = command;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+      }
+
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copiado";
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        button.classList.remove("is-copied");
+        if (label) label.textContent = defaultLabel;
+      }, 1600);
+    });
+  });
 }
 
 function setCurrentYear() {

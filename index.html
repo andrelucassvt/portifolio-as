@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="assets/css/components/_nav.css">
   <link rel="stylesheet" href="assets/css/components/_card.css">
   <link rel="stylesheet" href="assets/css/components/_portfolio.css">
+  <link rel="stylesheet" href="assets/css/components/_brain-flows.css">
   <link rel="stylesheet" href="assets/css/utilities/_utilities.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -55,6 +56,7 @@
         <ul class="nav__list">
           <li><a href="#apps" class="nav__link">Aplicativos</a></li>
           <li><a href="#plugins" class="nav__link">Open Source</a></li>
+          <li><a href="#brain-flows" class="nav__link">Brain Flows</a></li>
           <li><a href="#sobre" class="nav__link">Sobre</a></li>
           <li><a href="#contato" class="nav__link">Contato</a></li>
         </ul>
@@ -230,6 +232,69 @@
       </div>
     </section>
 
+    <section class="section brain-section" id="brain-flows">
+      <div class="container">
+        <div class="collection-heading" data-reveal>
+          <div>
+            <p class="eyebrow"><span></span> Open Source no GitHub</p>
+            <h2>Um workflow para agentes que <em>documentam antes de codar.</em></h2>
+          </div>
+          <p>Brain Flows é um conjunto de skills para agentes de IA — Claude Code e Codex — que transforma cada mudança em um processo claro e retomável: mapear o projeto, aprovar o design, planejar e executar passo a passo.</p>
+        </div>
+
+        <div class="brain-layout">
+          <article class="brain-highlight" data-reveal>
+            <div class="brain-highlight__top">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="24" r="4"/><circle cx="24" cy="10" r="4"/><circle cx="38" cy="24" r="4"/><circle cx="24" cy="38" r="4"/><path d="m13.5 20.5 7-7M27 13.5l7 7M34.5 27.5l-7 7M21 34.5l-7-7"/></svg>
+              <span>Claude Code · Codex</span>
+            </div>
+            <h3>brain_<wbr>flows</h3>
+            <p>O contexto e o progresso de cada mudança ficam versionados junto com o código, em <code>docs/flow/</code> e <code>docs/plan/</code> — nenhuma etapa depende do histórico da conversa.</p>
+            <div class="brain-command"><code>/plugin marketplace add andrelucassvt/brain-flows</code><button class="brain-command__copy" type="button" data-copy aria-label="Copiar comando de instalação"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar</span></button></div>
+            <a href="https://github.com/andrelucassvt/brain-flows" target="_blank" rel="noopener" aria-label="Abrir Brain Flows no GitHub">Ver no GitHub <span>↗</span></a>
+          </article>
+
+          <ol class="skill-list">
+            <li class="skill-item" data-reveal>
+              <span class="skill-item__index">01</span>
+              <div>
+                <h3>flow-init</h3>
+                <p>Analisa a estrutura real do repositório e cria o mapa do projeto em <code>docs/flow/</code>.</p>
+              </div>
+            </li>
+            <li class="skill-item" data-reveal>
+              <span class="skill-item__index">02</span>
+              <div>
+                <h3>flow</h3>
+                <p>Documenta como uma feature funciona de ponta a ponta: arquivos, ordem de execução e regras de negócio.</p>
+              </div>
+            </li>
+            <li class="skill-item" data-reveal>
+              <span class="skill-item__index">03</span>
+              <div>
+                <h3>brainstorming</h3>
+                <p>Explora a mudança, lê os flows relacionados e propõe um design que só vira código após aprovação.</p>
+              </div>
+            </li>
+            <li class="skill-item" data-reveal>
+              <span class="skill-item__index">04</span>
+              <div>
+                <h3>writing-plan</h3>
+                <p>Transforma o design aprovado em um plano acionável em <code>docs/plan/</code>, com fases e verificações.</p>
+              </div>
+            </li>
+            <li class="skill-item" data-reveal>
+              <span class="skill-item__index">05</span>
+              <div>
+                <h3>executing-plan</h3>
+                <p>Executa o plano uma tarefa por vez, verifica cada etapa e atualiza os flows afetados ao final.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
     <section class="section about-section" id="sobre">
       <div class="container about-layout">
         <div class="founder-mark" data-reveal aria-hidden="true">
@@ -283,7 +348,7 @@
       </a>
       <p>Aplicativos multiplataforma e ferramentas para desenvolvedores.</p>
       <div class="site-footer__nav">
-        <a href="#apps">Aplicativos</a><a href="#plugins">Plugins Open Source</a><a href="#sobre">Sobre</a>
+        <a href="#apps">Aplicativos</a><a href="#plugins">Plugins Open Source</a><a href="#brain-flows">Brain Flows</a><a href="#sobre">Sobre</a>
       </div>
       <a class="site-footer__email" href="mailto:anl.software.contato@gmail.com">anl.software.contato@gmail.com</a>
     </div>

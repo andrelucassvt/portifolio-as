@@ -13,7 +13,7 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 - `index.html` — página única; todas as seções (hero, capabilities, apps, plugins, sobre, contato) e a ordem de carregamento dos CSS no `<head>`
 - `assets/css/base/` — tokens (variáveis CSS), reset, estilos globais de tags
 - `assets/css/layout/` — container, grid, header, footer
-- `assets/css/components/` — componentes BEM (button, nav, card, portfolio)
+- `assets/css/components/` — componentes BEM (button, nav, card, portfolio, brain-flows)
 - `assets/css/utilities/` — utilitários, sempre por último no cascade
 - `assets/js/main.js` — único arquivo JS; cada funcionalidade é uma função isolada chamada no `DOMContentLoaded`
 - `docs/flow/` — documentação de estrutura e flows do projeto
@@ -21,7 +21,7 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 
 ## Comandos
 
-- `F5` no VS Code — sobe `python3 -m http.server 4173` e abre o Chrome (`.vscode/launch.json` + `tasks.json`)
+- `F5` no VS Code — libera a porta 4173, sobe `python3 -m http.server 4173` e abre o Chrome (`.vscode/launch.json` + `tasks.json`)
 - `./deploy.sh "mensagem"` — commit, push na `master`, espera o build do Pages e confirma HTTP 200 (exige `gh` autenticado)
 - `./sync-brain.sh` — sincroniza skills/agentes do repo `brain-flows` (script local, está no `.gitignore`)
 
