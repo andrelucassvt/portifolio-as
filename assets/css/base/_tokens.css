@@ -1,83 +1,77 @@
-/* ==========================================================================
-   TOKENS — Design tokens (fonte única de verdade para valores visuais)
-   Nada de valores "mágicos" espalhados pelo CSS: tudo referencia isto aqui.
-   ========================================================================== */
-
 :root {
-  /* -- Cor --------------------------------------------------------------
-     Placeholders. Substituir pelos valores finais da identidade visual
-     quando estiver definida. Manter a nomenclatura semântica abaixo. */
-  --color-bg: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-text: #1a1a1a;
-  --color-text-muted: #5c5c5c;
-  --color-primary: #111111;
-  --color-primary-contrast: #ffffff;
-  --color-accent: #3d5afe;
-  --color-border: #e0e0e0;
+  /* Palette: parchment, ink and oxidised copper. */
+  --color-bg: #f3efe6;
+  --color-bg-soft: #f8f5ef;
+  --color-surface: #ebe5da;
+  --color-surface-dark: #183235;
+  --color-text: #172a2c;
+  --color-text-muted: #657170;
+  --color-primary: #bd5b39;
+  --color-primary-hover: #9d452b;
+  --color-primary-contrast: #fffaf2;
+  --color-accent: #bd5b39;
+  --color-sage: #809186;
+  --color-gold: #c8a36a;
+  --color-border: #d8cdbd;
+  --color-border-dark: #355052;
+  --color-white: #fffdf8;
 
-  /* -- Tipografia ---------------------------------------------------------
-     Trocar as font stacks quando as fontes definitivas forem escolhidas. */
-  --font-heading: "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "Courier New", monospace;
+  --font-heading: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Manrope", "Avenir Next", Arial, sans-serif;
+  --font-mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
 
-  --fs-100: 0.75rem;   /* 12px */
-  --fs-200: 0.875rem;  /* 14px */
-  --fs-300: 1rem;      /* 16px — base */
-  --fs-400: 1.25rem;   /* 20px */
-  --fs-500: 1.5rem;    /* 24px */
-  --fs-600: 2rem;      /* 32px */
-  --fs-700: 2.5rem;    /* 40px */
-  --fs-800: 3.5rem;    /* 56px */
+  --fs-100: 0.6875rem;
+  --fs-200: 0.75rem;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.75rem;
+  --fs-700: clamp(2.4rem, 4.8vw, 4.6rem);
+  --fs-800: clamp(3.5rem, 7.2vw, 7rem);
 
+  --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
-  --fw-bold: 700;
+  --fw-semibold: 600;
 
-  --lh-tight: 1.15;
-  --lh-normal: 1.5;
-  --lh-loose: 1.8;
+  --lh-tight: 0.96;
+  --lh-snug: 1.16;
+  --lh-normal: 1.65;
+  --lh-loose: 1.85;
 
-  /* -- Espaçamento ---------------------------------------------------------
-     Escala em rem, base 8px. Usar sempre estas variáveis, nunca px soltos. */
-  --space-100: 0.5rem;   /* 8px */
-  --space-200: 0.75rem;  /* 12px */
-  --space-300: 1rem;     /* 16px */
-  --space-400: 1.5rem;   /* 24px */
-  --space-500: 2rem;     /* 32px */
-  --space-600: 3rem;     /* 48px */
-  --space-700: 4rem;     /* 64px */
-  --space-800: 6rem;     /* 96px */
-  --space-900: 8rem;     /* 128px */
+  --space-050: 0.25rem;
+  --space-100: 0.5rem;
+  --space-150: 0.625rem;
+  --space-200: 0.75rem;
+  --space-300: 1rem;
+  --space-400: 1.5rem;
+  --space-500: 2rem;
+  --space-600: 3rem;
+  --space-700: 4rem;
+  --space-800: 6rem;
+  --space-900: 8rem;
+  --space-1000: 10rem;
 
-  /* -- Layout --------------------------------------------------------------- */
-  --container-max: 1200px;
-  --container-padding: var(--space-400);
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-full: 999px;
+  --container-max: 90rem;
+  --container-copy: 78rem;
+  --container-padding: clamp(1.25rem, 4vw, 4rem);
+  --header-height: 5.75rem;
 
-  /* -- Sombra --------------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 999rem;
 
-  /* -- Transição -------------------------------------------------------------- */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
+  --shadow-sm: 0 0.25rem 1rem rgba(23, 42, 44, 0.06);
+  --shadow-md: 0 1rem 3rem rgba(23, 42, 44, 0.1);
+  --shadow-lg: 0 2rem 5rem rgba(23, 42, 44, 0.14);
 
-  /* -- Z-index (escala controlada, evita "z-index: 9999") ------------------- */
+  --transition-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-base: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 900ms cubic-bezier(0.16, 1, 0.3, 1);
+
   --z-header: 100;
   --z-overlay: 200;
   --z-modal: 300;
 }
-
-/* -- Breakpoints (referência — CSS não tem var() em media query, usar os
-   valores fixos abaixo diretamente em cada @media) --------------------------
-   sm: 480px
-   md: 768px
-   lg: 1024px
-   xl: 1280px
-*/

@@ -1,34 +1,10 @@
-/* ==========================================================================
-   COMPONENT / Card — .card (base) + .card__elemento
-   Usado em Serviços e Projetos.
-   ========================================================================== */
-
+/* Generic card primitive kept intentionally quiet; project-specific cards live
+   in _portfolio.css. */
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-300);
   padding: var(--space-500);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  border: 0.0625rem solid var(--color-border);
+  background: var(--color-bg-soft);
 }
 
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.card__icon {
-  width: 40px;
-  height: 40px;
-}
-
-.card__title {
-  font-size: var(--fs-400);
-}
-
-.card__description {
-  color: var(--color-text-muted);
-  font-size: var(--fs-200);
-}
+.card__title { margin-bottom: var(--space-200); }
+.card__description { color: var(--color-text-muted); }

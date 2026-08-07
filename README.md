@@ -2,6 +2,16 @@
 
 Site estático, uma página só (scroll), HTML + CSS puro (sem build tools) e JS mínimo.
 
+## Como rodar no VS Code
+
+1. Abra a pasta do projeto no VS Code.
+2. Pressione `F5`.
+3. Selecione **Portfólio AS Software** caso o editor solicite uma configuração.
+
+O VS Code inicia automaticamente um servidor local em
+`http://localhost:4173` e abre o projeto no Chrome. A configuração está em
+`.vscode/launch.json` e a tarefa do servidor em `.vscode/tasks.json`.
+
 ## Estrutura de pastas
 
 ```

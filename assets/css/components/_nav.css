@@ -1,44 +1,88 @@
-/* ==========================================================================
-   COMPONENT / Nav — .nav (base) + .nav__elemento + .nav--estado
-   ========================================================================== */
+.nav { justify-self: center; }
 
 .nav__list {
   display: flex;
-  gap: var(--space-500);
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.75rem);
 }
 
 .nav__link {
+  position: relative;
+  display: block;
+  padding-block: var(--space-100);
+  font-family: var(--font-mono);
   font-size: var(--fs-200);
-  font-weight: var(--fw-medium);
-  color: var(--color-text-muted);
-  transition: color var(--transition-fast);
-}
-
-.nav__link:hover,
-.nav__link:focus-visible,
-.nav__link--active {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--color-text);
 }
 
-@media (max-width: 768px) {
+.nav__link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.0625rem;
+  content: "";
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after,
+.nav__link--active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 900px) {
   .nav {
     position: fixed;
     inset: 0;
-    top: 64px;
-    background-color: var(--color-bg);
     z-index: var(--z-overlay);
-    transform: translateY(-100%);
-    transition: transform var(--transition-base);
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    background: var(--color-bg);
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: visibility var(--transition-base), opacity var(--transition-base), transform var(--transition-base);
   }
 
-  /* Estado controlado via JS: adiciona/remove esta classe no menu */
+  .nav::before,
+  .nav::after {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border: 0.0625rem solid var(--color-border);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .nav::before { top: -9rem; right: -7rem; }
+  .nav::after { bottom: -10rem; left: -7rem; }
+
   .nav--open {
+    visibility: visible;
+    opacity: 1;
     transform: translateY(0);
   }
 
   .nav__list {
+    z-index: 1;
     flex-direction: column;
-    padding: var(--space-500);
     gap: var(--space-400);
+    text-align: center;
   }
+
+  .nav__link {
+    font-family: var(--font-heading);
+    font-size: var(--fs-600);
+    letter-spacing: -0.02em;
+    text-transform: none;
+  }
+
+  body.nav-open { overflow: hidden; }
 }

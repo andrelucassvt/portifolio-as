@@ -1,36 +1,43 @@
-/* ==========================================================================
-   COMPONENT / Button — .btn (base) + .btn--modificador
-   ========================================================================== */
-
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-100);
-  padding: var(--space-200) var(--space-400);
-  border-radius: var(--radius-full);
+  gap: var(--space-300);
+  min-height: 3.5rem;
+  padding: var(--space-300) var(--space-500);
+  border: 0.0625rem solid transparent;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
   font-weight: var(--fw-medium);
-  font-size: var(--fs-300);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   white-space: nowrap;
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.btn:active {
-  transform: translateY(1px);
-}
+.btn:hover { transform: translateY(-0.15rem); }
+.btn:active { transform: translateY(0); }
 
 .btn--primary {
-  background-color: var(--color-primary);
   color: var(--color-primary-contrast);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
 }
 
 .btn--secondary {
-  background-color: transparent;
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  background: transparent;
+  border-color: var(--color-text-muted);
 }
 
-.btn--sm {
-  padding: var(--space-100) var(--space-300);
-  font-size: var(--fs-200);
+.btn--secondary:hover {
+  color: var(--color-bg-soft);
+  background: var(--color-text);
+  border-color: var(--color-text);
 }

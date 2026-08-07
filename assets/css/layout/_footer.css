@@ -1,21 +1,62 @@
-/* ==========================================================================
-   LAYOUT / Footer
-   ========================================================================== */
-
 .site-footer {
-  border-top: 1px solid var(--color-border);
-  padding-block: var(--space-600);
+  color: var(--color-white);
+  background: #102729;
 }
 
-.site-footer__inner {
+.site-footer__top {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(16rem, 1.2fr) auto minmax(15rem, 0.9fr);
+  align-items: start;
+  gap: var(--space-500);
+  padding-block: var(--space-700);
+  border-bottom: 0.0625rem solid var(--color-border-dark);
+}
+
+.brand--footer .brand__name { color: var(--color-white); }
+.site-footer__top > p {
+  max-width: 23rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-500);
+  line-height: 1.4;
+  color: #afbcba;
+}
+
+.site-footer__nav { display: grid; gap: var(--space-100); }
+.site-footer__nav a,
+.site-footer__email,
+.site-footer__bottom a {
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.03em;
+}
+
+.site-footer__nav a { color: #cbd2cd; transition: color var(--transition-fast); }
+.site-footer__nav a:hover { color: var(--color-gold); }
+
+.site-footer__email {
+  justify-self: end;
+  padding-bottom: var(--space-050);
+  border-bottom: 0.0625rem solid var(--color-border-dark);
+  color: var(--color-gold);
+}
+
+.site-footer__bottom {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-300);
+  gap: var(--space-400);
+  padding-block: var(--space-400);
 }
 
-.site-footer__links {
-  display: flex;
-  gap: var(--space-400);
+.site-footer__bottom small { color: #879997; }
+.site-footer__bottom a { color: #cbd2cd; }
+
+@media (max-width: 960px) {
+  .site-footer__top { grid-template-columns: repeat(2, 1fr); }
+  .site-footer__email { justify-self: start; }
+}
+
+@media (max-width: 640px) {
+  .site-footer__top { grid-template-columns: 1fr; }
+  .site-footer__bottom { align-items: flex-start; flex-direction: column; }
 }
