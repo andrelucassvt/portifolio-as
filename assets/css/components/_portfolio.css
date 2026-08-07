@@ -465,7 +465,7 @@
   color: #93a6a4;
 }
 
-.plugin-card h3 { font-size: clamp(2.25rem, 4vw, 4.2rem); }
+.plugin-card h3 { font-size: clamp(2.25rem, 3.6vw, 3.8rem); }
 
 .plugin-card > p {
   max-width: 48rem;

@@ -26,8 +26,8 @@
   --fs-400: 1rem;
   --fs-500: 1.25rem;
   --fs-600: 1.75rem;
-  --fs-700: clamp(2.4rem, 4.8vw, 4.6rem);
-  --fs-800: clamp(3.5rem, 7.2vw, 7rem);
+  --fs-700: clamp(2.4rem, 4.1vw, 4.1rem);
+  --fs-800: clamp(3.5rem, 6.3vw, 6.2rem);
 
   --fw-light: 300;
   --fw-regular: 400;
