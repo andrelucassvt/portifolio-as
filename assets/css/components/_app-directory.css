@@ -169,6 +169,41 @@
 .js .app-detail { display: none; }
 .js .app-detail.is-active { display: grid; }
 
+/* Modo de detalhe: com um app aberto, a tela mostra só o card do app,
+   centralizado na altura restante da viewport, sem cabeçalho de coleção,
+   link "voltar ao site" ou rodapé — e sem permitir rolagem. */
+body.app-detail-open { overflow: hidden; }
+
+body.app-detail-open .app-directory__back,
+body.app-detail-open .collection-heading,
+body.app-detail-open .site-footer {
+  display: none;
+}
+
+body.app-detail-open .apps-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-block: 0;
+  padding-top: var(--header-height);
+  box-sizing: border-box;
+}
+
+body.app-detail-open .app-detail {
+  padding-block: var(--space-400);
+}
+
+@media (max-height: 700px) {
+  body.app-detail-open .app-detail { padding-block: var(--space-300); }
+  body.app-detail-open .app-detail__visual { width: 6rem; margin-bottom: var(--space-300); }
+  body.app-detail-open .app-detail__visual img { width: 4.25rem; }
+  body.app-detail-open .app-detail__description { margin-top: var(--space-300); }
+  body.app-detail-open .app-detail__actions { margin-top: var(--space-300); }
+  body.app-detail-open .app-detail__back { margin-top: var(--space-400); }
+}
+
 /* Botão "Ver todos os apps" no fim da seção Aplicativos da landing */
 .app-grid-footer {
   display: flex;

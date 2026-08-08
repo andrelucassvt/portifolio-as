@@ -126,12 +126,14 @@ function initAppDirectory() {
     details.forEach((detail) => detail.classList.remove("is-active"));
     target.classList.add("is-active");
     target.querySelector(".app-detail__title")?.focus();
+    document.body.classList.add("app-detail-open");
     if (updateUrl) history.replaceState(null, "", `#${target.id}`);
   };
 
   const closeDetail = () => {
     details.forEach((detail) => detail.classList.remove("is-active"));
     list.classList.remove("is-hidden");
+    document.body.classList.remove("app-detail-open");
     lastTrigger?.focus();
     history.replaceState(null, "", window.location.pathname + window.location.search);
   };
