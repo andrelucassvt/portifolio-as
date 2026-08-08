@@ -53,19 +53,6 @@
     transition: visibility var(--transition-base), opacity var(--transition-base), transform var(--transition-base);
   }
 
-  .nav::before,
-  .nav::after {
-    position: absolute;
-    width: 18rem;
-    height: 18rem;
-    border: 0.0625rem solid var(--color-border);
-    border-radius: 50%;
-    content: "";
-  }
-
-  .nav::before { top: -9rem; right: -7rem; }
-  .nav::after { bottom: -10rem; left: -7rem; }
-
   .nav--open {
     visibility: visible;
     opacity: 1;

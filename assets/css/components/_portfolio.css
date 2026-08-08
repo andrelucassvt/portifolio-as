@@ -192,18 +192,6 @@
 /* Apps */
 .apps-section { position: relative; }
 
-.apps-section::before {
-  position: absolute;
-  top: 0;
-  right: 7vw;
-  width: 20rem;
-  height: 20rem;
-  border: 0.0625rem solid rgba(216, 205, 189, 0.58);
-  border-radius: 50%;
-  content: "";
-  transform: translateY(-58%);
-}
-
 .collection-heading {
   position: relative;
   z-index: 1;
@@ -297,17 +285,6 @@
   background: var(--color-primary);
 }
 
-.app-card__index {
-  position: absolute;
-  bottom: var(--space-200);
-  left: var(--space-300);
-  z-index: 2;
-  font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
 .app-card__body { padding: var(--space-400) var(--space-100) var(--space-300); }
 
 .app-card__title-row {
@@ -362,7 +339,7 @@
   overflow: hidden;
   overflow: clip;
   color: var(--color-white);
-  background: var(--color-surface-dark);
+  background: var(--color-surface-dark-soft);
 }
 
 .plugins-section::before {
@@ -570,19 +547,6 @@
   color: var(--color-text);
 }
 
-.founder-mark > p {
-  position: absolute;
-  right: 0;
-  bottom: 7%;
-  padding: var(--space-200) var(--space-300);
-  font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  letter-spacing: 0.05em;
-  line-height: var(--lh-normal);
-  text-transform: uppercase;
-  background: var(--color-bg);
-}
-
 .about-copy h2 { max-width: 11ch; }
 
 .about-copy__lead {
@@ -599,17 +563,9 @@
 }
 
 .studio-facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-300);
   margin-top: var(--space-600);
   padding-top: var(--space-400);
   border-top: 0.0625rem solid var(--color-border);
-}
-
-.studio-facts div + div {
-  padding-left: var(--space-300);
-  border-left: 0.0625rem solid var(--color-border);
 }
 
 .studio-facts dt {
@@ -731,8 +687,6 @@
   .app-card__body > p { min-height: auto; }
   .about-layout { grid-template-columns: minmax(0, 1fr); }
   .founder-mark { width: min(100%, 31rem); margin-inline: auto; }
-  .studio-facts { grid-template-columns: minmax(0, 1fr); }
-  .studio-facts div + div { padding-top: var(--space-300); padding-left: 0; border-top: 0.0625rem solid var(--color-border); border-left: 0; }
   .contact-section { padding-block: var(--space-800); }
   .contact-section__inner { align-items: start; flex-direction: column; }
 }
