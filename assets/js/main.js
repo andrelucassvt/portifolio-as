@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeader();
   initReveal();
   initCommandCopy();
+  initAppDirectory();
   setCurrentYear();
 });
 
@@ -111,6 +112,58 @@ function initCommandCopy() {
       }, 1600);
     });
   });
+}
+
+function initAppDirectory() {
+  const list = document.querySelector("[data-app-directory]");
+  if (!list) return;
+
+  const details = document.querySelectorAll("[data-app-detail]");
+  let lastTrigger = null;
+
+  const openDetail = (target, updateUrl = true) => {
+    list.classList.add("is-hidden");
+    details.forEach((detail) => detail.classList.remove("is-active"));
+    target.classList.add("is-active");
+    target.querySelector(".app-detail__title")?.focus();
+    if (updateUrl) history.replaceState(null, "", `#${target.id}`);
+  };
+
+  const closeDetail = () => {
+    details.forEach((detail) => detail.classList.remove("is-active"));
+    list.classList.remove("is-hidden");
+    lastTrigger?.focus();
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  };
+
+  list.querySelectorAll(".app-list__item").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.preventDefault();
+      const target = document.querySelector(item.getAttribute("href"));
+      if (!target) return;
+
+      lastTrigger = item;
+      openDetail(target);
+    });
+  });
+
+  document.querySelectorAll("[data-app-back]").forEach((back) => {
+    back.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeDetail();
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && list.classList.contains("is-hidden")) {
+      closeDetail();
+    }
+  });
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target?.matches("[data-app-detail]")) openDetail(target, false);
+  }
 }
 
 function setCurrentYear() {

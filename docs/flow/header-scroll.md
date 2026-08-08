@@ -1,10 +1,10 @@
 ---
 generated_at: 2026-08-07
-source_commit: 4d1e363
+source_commit: 689abf3
 source_state: dirty
-verified_at: 2026-08-07
+verified_at: 2026-08-08
 status: current
-related_plans: []
+related_plans: ["docs/plan/apps-directory-page.md"]
 ---
 
 # Flow: Header Dinâmico no Scroll
@@ -36,7 +36,7 @@ Ao carregar a página, `initHeader()` registra um listener de scroll que compara
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Apresentação (marcação) | `index.html` | `<header class="site-header" data-header>` |
+| Apresentação (marcação) | `index.html`, `apps.html` | `<header class="site-header" data-header>` — mesma marcação duplicada nas duas páginas |
 | Comportamento | `assets/js/main.js` | `initHeader()` — limiar de scroll e alternância da classe |
 | Estilo | `assets/css/layout/_header.css` | Estilo do header e do estado `is-scrolled` |
 

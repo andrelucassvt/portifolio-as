@@ -1,10 +1,10 @@
 ---
 generated_at: 2026-08-07
-source_commit: 4d1e363
+source_commit: 689abf3
 source_state: dirty
-verified_at: 2026-08-07
+verified_at: 2026-08-08
 status: current
-related_plans: []
+related_plans: ["docs/plan/apps-directory-page.md"]
 ---
 
 # Flow: Animações de Reveal no Scroll
@@ -13,7 +13,7 @@ related_plans: []
 
 ## Visão Geral
 
-O `index.html` marca blocos animáveis com o atributo `data-reveal` (conteúdo do hero, capabilities, cards de apps e plugins, seções sobre e contato). No carregamento, `initReveal()` observa esses elementos com um `IntersectionObserver`: quando um elemento cruza o limiar de visibilidade, recebe a classe `is-visible` (que dispara a transição CSS) e deixa de ser observado — a animação acontece uma única vez por elemento. Dois fallbacks garantem que o conteúdo nunca fique invisível: usuários com `prefers-reduced-motion: reduce` e navegadores sem `IntersectionObserver` recebem `is-visible` em todos os elementos imediatamente. Além disso, um script inline no `<head>` adiciona a classe `js` ao `<html>`, permitindo ao CSS esconder os elementos apenas quando JS está disponível.
+O `index.html` marca blocos animáveis com o atributo `data-reveal` (conteúdo do hero, capabilities, cards de apps e plugins, seções sobre e contato); `apps.html` reaproveita o mesmo mecanismo em `.collection-heading`. No carregamento, `initReveal()` observa esses elementos com um `IntersectionObserver`: quando um elemento cruza o limiar de visibilidade, recebe a classe `is-visible` (que dispara a transição CSS) e deixa de ser observado — a animação acontece uma única vez por elemento. Dois fallbacks garantem que o conteúdo nunca fique invisível: usuários com `prefers-reduced-motion: reduce` e navegadores sem `IntersectionObserver` recebem `is-visible` em todos os elementos imediatamente. Além disso, um script inline no `<head>` adiciona a classe `js` ao `<html>`, permitindo ao CSS esconder os elementos apenas quando JS está disponível.
 
 ## Passo a Passo
 
@@ -36,13 +36,13 @@ O `index.html` marca blocos animáveis com o atributo `data-reveal` (conteúdo d
 
 - **`prefers-reduced-motion: reduce`:** todos os elementos ficam visíveis imediatamente, sem animação (`assets/js/main.js`).
 - **Navegador sem IntersectionObserver:** mesmo fallback — visível imediato (`assets/js/main.js`).
-- **JS desabilitado:** a classe `js` nunca é adicionada ao `<html>`, então o CSS não esconde os elementos — o conteúdo aparece estático (`index.html`).
+- **JS desabilitado:** a classe `js` nunca é adicionada ao `<html>`, então o CSS não esconde os elementos — o conteúdo aparece estático (`index.html`, `apps.html`).
 
 ## Arquivos Envolvidos
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Apresentação (marcação) | `index.html` | Atributos `data-reveal` nos blocos e script inline que adiciona a classe `js` |
+| Apresentação (marcação) | `index.html`, `apps.html` | Atributos `data-reveal` nos blocos e script inline que adiciona a classe `js` — mesmo mecanismo duplicado nas duas páginas |
 | Comportamento | `assets/js/main.js` | `initReveal()` — observer, limiares e fallbacks |
 | Estilo | `assets/css/utilities/_utilities.css` | Estados inicial/escondido e `is-visible` com a transição |
 

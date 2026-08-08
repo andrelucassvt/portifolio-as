@@ -1,10 +1,10 @@
 ---
 generated_at: 2026-08-07
-source_commit: 4d1e363
+source_commit: 689abf3
 source_state: dirty
-verified_at: 2026-08-07
+verified_at: 2026-08-08
 status: current
-related_plans: []
+related_plans: ["docs/plan/apps-directory-page.md"]
 ---
 
 # Flow: Navegação Mobile
@@ -43,7 +43,7 @@ O usuário toca no botão toggle do header (`.site-header__toggle`). O JS altern
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Apresentação (marcação) | `index.html` | Toggle (`[data-nav-toggle]`), nav (`[data-nav]`), backdrop (`[data-nav-backdrop]`), header (`[data-header]`) |
+| Apresentação (marcação) | `index.html`, `apps.html` | Toggle (`[data-nav-toggle]`), nav (`[data-nav]`), backdrop (`[data-nav-backdrop]`), header (`[data-header]`) — mesma marcação duplicada nas duas páginas |
 | Comportamento | `assets/js/main.js` | `initMobileNav()` — estado do menu e todos os listeners |
 | Estilo | `assets/css/components/_nav.css` | Aparência da nav e do estado `nav--open` |
 | Estilo | `assets/css/layout/_header.css` | Toggle, `site-header--menu-open`, trava de scroll via `body.nav-open` |

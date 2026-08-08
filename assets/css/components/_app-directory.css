@@ -1,0 +1,198 @@
+/* Diretório de apps — serve a página apps.html: lista todos os apps e
+   exibe o detalhe de um app por vez, centralizado, na mesma página. */
+
+.app-directory__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-100);
+  margin-bottom: var(--space-500);
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.app-directory__back:hover { color: var(--color-primary); }
+
+.app-list {
+  display: grid;
+  gap: var(--space-300);
+}
+
+.app-list__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-400);
+  padding: var(--space-400);
+  border: 0.0625rem solid var(--color-border);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.app-list__item:hover,
+.app-list__item:focus-visible {
+  border-color: var(--color-primary);
+  transform: translateX(0.5rem);
+}
+
+.app-list__icon {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  background: var(--app-wash);
+}
+
+.app-list__icon img {
+  width: 3rem;
+  border-radius: 22%;
+  box-shadow: var(--shadow-sm);
+}
+
+.app-list__body {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: var(--space-300);
+  min-width: 0;
+}
+
+.app-list__name {
+  font-size: var(--fs-500);
+  color: var(--color-text);
+}
+
+.app-list__category {
+  font-family: var(--font-mono);
+  font-size: var(--fs-100);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.app-list__arrow {
+  color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.app-list__item:hover .app-list__arrow,
+.app-list__item:focus-visible .app-list__arrow {
+  transform: translateX(0.25rem);
+}
+
+/* Detalhe centralizado */
+.app-detail {
+  display: grid;
+  justify-items: center;
+  max-width: 36rem;
+  margin-inline: auto;
+  padding-block: var(--space-700);
+  text-align: center;
+}
+
+.app-detail__visual {
+  display: grid;
+  place-items: center;
+  width: 10rem;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-500);
+  background: var(--app-wash);
+}
+
+.app-detail__visual img {
+  width: 7rem;
+  border-radius: 22%;
+  box-shadow: var(--shadow-md);
+}
+
+.app-detail__title { font-size: var(--fs-650); }
+
+.app-detail__category {
+  margin-top: var(--space-100);
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.app-detail__description {
+  max-width: 32rem;
+  margin-top: var(--space-400);
+  line-height: var(--lh-loose);
+  color: var(--color-text-muted);
+}
+
+.app-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-300);
+  margin-top: var(--space-500);
+}
+
+.app-detail__actions svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+
+.app-detail__back {
+  margin-top: var(--space-600);
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.app-detail__back:hover { color: var(--color-primary); }
+
+/* Wash por app — compartilhado entre item da lista e painel de detalhe */
+.app-list__item--luma,
+.app-detail--luma { --app-wash: #ddd9d2; }
+
+.app-list__item--celllab,
+.app-detail--celllab { --app-wash: #d6ebe3; }
+
+.app-list__item--flora,
+.app-detail--flora { --app-wash: #f0dddd; }
+
+.app-list__item--radio,
+.app-detail--radio { --app-wash: #eee0d8; }
+
+/* Estado da página: lista ou detalhe. Sem JS, ambos ficam visíveis e
+   navegáveis por âncora — segue o precedente de _portfolio.css:641. */
+.js .app-list.is-hidden { display: none; }
+.js .app-detail { display: none; }
+.js .app-detail.is-active { display: grid; }
+
+/* Botão "Ver todos os apps" no fim da seção Aplicativos da landing */
+.app-grid-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-600);
+}
+
+@media (max-width: 1180px) {
+  .app-detail { padding-block: var(--space-600); }
+}
+
+@media (max-width: 768px) {
+  .app-list__item { gap: var(--space-300); padding: var(--space-300); }
+  .app-list__icon { width: 3.75rem; }
+  .app-list__icon img { width: 2.5rem; }
+  .app-detail__visual { width: 8.5rem; }
+  .app-detail__visual img { width: 6rem; }
+}
+
+@media (max-width: 540px) {
+  .app-list__item { grid-template-columns: auto minmax(0, 1fr); }
+  .app-list__arrow { display: none; }
+  .app-list__body { flex-direction: column; align-items: flex-start; gap: var(--space-050); }
+  .app-detail__visual { width: 7rem; }
+  .app-detail__visual img { width: 5rem; }
+  .app-detail__actions { align-items: stretch; flex-direction: column; }
+}
