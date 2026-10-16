@@ -163,6 +163,9 @@
 .app-list__item--radio,
 .app-detail--radio { --app-wash: #eee0d8; }
 
+.app-list__item--arrow-army,
+.app-detail--arrow-army { --app-wash: #d7e2f0; }
+
 /* Estado da página: lista ou detalhe. Sem JS, ambos ficam visíveis e
    navegáveis por âncora — segue o precedente de _portfolio.css:641. */
 .js .app-list.is-hidden { display: none; }

@@ -46,7 +46,7 @@ apps.html  (lista de apps → detalhe centralizado por app → lojas)
 | Feature | Caminho principal | Descrição resumida |
 |---------|------------------|-------------------|
 | Landing do portfólio | `index.html` + `assets/css/components/_portfolio.css` + `assets/css/components/_brain-flows.css` | Seções em scroll: hero, capabilities, apps (4 cards com links de loja e botão "Ver todos os apps"), plugins open source, brain-flows (workflow de skills para agentes de IA, com destaque do repo + lista das 5 skills), sobre, contato |
-| Diretório de aplicativos | `apps.html` + `assets/css/components/_app-directory.css` | Página independente com lista dos 4 apps; ao clicar em um, exibe um painel de detalhe centralizado na mesma página (ícone grande, descrição, botões Google Play/App Store, link de voltar) |
+| Diretório de aplicativos | `apps.html` + `assets/css/components/_app-directory.css` | Página independente com lista dos 5 apps; ao clicar em um, exibe um painel de detalhe centralizado na mesma página (ícone grande, descrição, botões Google Play/App Store, link de voltar) |
 
 _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não módulos separados — ver "Camadas / Módulos Compartilhados"._
 
