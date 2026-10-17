@@ -1,0 +1,20 @@
+/* Página de redirecionamento — /ir/<slug>/: reaproveita o card de detalhe
+   de _app-directory.css e o centraliza na viewport. No celular, o JS troca
+   a página pela loja assim que o DOM carrega; no desktop, o card fica
+   visível com os dois botões. */
+
+.redirect {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: var(--space-500) var(--container-padding);
+}
+
+.redirect .app-detail {
+  width: 100%;
+  padding-block: 0;
+}
+
+@media (max-height: 700px) {
+  .redirect { padding-block: var(--space-300); }
+}

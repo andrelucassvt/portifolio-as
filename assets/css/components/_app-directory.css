@@ -150,6 +150,47 @@
 
 .app-detail__back:hover { color: var(--color-primary); }
 
+/* Rodapé do detalhe: copiar o link curto do app e voltar para a lista */
+.app-detail__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-200) var(--space-300);
+  margin-top: var(--space-600);
+}
+
+.app-detail__footer .app-detail__back { margin-top: 0; }
+
+.app-detail__copy {
+  display: none;
+  align-items: center;
+  gap: var(--space-100);
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.js .app-detail__copy { display: inline-flex; }
+
+.app-detail__copy:hover { color: var(--color-primary); }
+
+.app-detail__copy.is-copied { color: var(--color-sage); }
+
+.app-detail__copy svg {
+  flex-shrink: 0;
+  width: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
 /* Wash por app — compartilhado entre item da lista e painel de detalhe */
 .app-list__item--luma,
 .app-detail--luma { --app-wash: #ddd9d2; }
@@ -174,7 +215,7 @@
 
 /* Modo de detalhe: com um app aberto, a tela mostra só o card do app,
    centralizado na altura restante da viewport, sem cabeçalho de coleção,
-   link "voltar ao site" ou rodapé — e sem permitir rolagem. */
+   link "voltar ao site" ou rodapé do site — e sem permitir rolagem. */
 body.app-detail-open { overflow: hidden; }
 
 body.app-detail-open .app-directory__back,
@@ -204,7 +245,7 @@ body.app-detail-open .app-detail {
   body.app-detail-open .app-detail__visual img { width: 4.25rem; }
   body.app-detail-open .app-detail__description { margin-top: var(--space-300); }
   body.app-detail-open .app-detail__actions { margin-top: var(--space-300); }
-  body.app-detail-open .app-detail__back { margin-top: var(--space-400); }
+  body.app-detail-open .app-detail__footer { margin-top: var(--space-400); }
 }
 
 /* Botão "Ver todos os apps" no fim da seção Aplicativos da landing */

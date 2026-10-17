@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  initStoreRedirect();
   initMobileNav();
   initHeader();
   initReveal();
   initCommandCopy();
+  initShortLinkCopy();
   initAppDirectory();
   setCurrentYear();
 });
@@ -77,6 +79,23 @@ function initReveal() {
   elements.forEach((element) => observer.observe(element));
 }
 
+function initStoreRedirect() {
+  const redirect = document.querySelector("[data-store-redirect]");
+  if (!redirect) return;
+
+  const ua = navigator.userAgent;
+  const isAndroid = /Android/i.test(ua);
+  // iPadOS 13+ se apresenta como Macintosh; o toque diferencia de um Mac real.
+  const isIOS =
+    /iPhone|iPad|iPod/i.test(ua) ||
+    (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  const store = isAndroid ? "android" : isIOS ? "ios" : null;
+  if (!store) return;
+
+  const link = redirect.querySelector(`[data-store="${store}"]`);
+  if (link) window.location.replace(link.href);
+}
+
 function initCommandCopy() {
   const buttons = document.querySelectorAll("[data-copy]");
   if (!buttons.length) return;
@@ -90,18 +109,48 @@ function initCommandCopy() {
       const command = button.closest(".brain-command")?.querySelector("code")?.textContent.trim();
       if (!command) return;
 
-      try {
-        await navigator.clipboard.writeText(command);
-      } catch {
-        const textarea = document.createElement("textarea");
-        textarea.value = command;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-      }
+      await copyText(command);
+
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copiado";
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        button.classList.remove("is-copied");
+        if (label) label.textContent = defaultLabel;
+      }, 1600);
+    });
+  });
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+}
+
+function initShortLinkCopy() {
+  const buttons = document.querySelectorAll("[data-copy-short-link]");
+  if (!buttons.length) return;
+
+  buttons.forEach((button) => {
+    const label = button.querySelector("span");
+    const defaultLabel = label ? label.textContent : "";
+    let timeout;
+
+    button.addEventListener("click", async () => {
+      const url = button.dataset.shortUrl;
+      if (!url) return;
+
+      await copyText(url);
 
       button.classList.add("is-copied");
       if (label) label.textContent = "Copiado";
