@@ -31,7 +31,6 @@ window.LOCALES = {
     "hero.lead": "AS Software cria aplicativos multiplataforma e ferramentas para desenvolvedores, do primeiro conceito à publicação.",
     "hero.ctaApps": "Ver aplicativos",
     "hero.ctaAbout": "Conhecer a AS Software",
-    "hero.caption": "Código que cresce com cada ideia.",
 
     "cap.label": "Áreas de atuação",
     "cap.mobile.text": "Experiências consistentes nas duas plataformas.",
@@ -136,7 +135,6 @@ window.LOCALES = {
     "hero.lead": "AS Software builds cross-platform apps and developer tools, from the first concept to release.",
     "hero.ctaApps": "See apps",
     "hero.ctaAbout": "Get to know AS Software",
-    "hero.caption": "Code that grows with every idea.",
 
     "cap.label": "Areas of expertise",
     "cap.mobile.text": "Consistent experiences across both platforms.",
@@ -241,7 +239,6 @@ window.LOCALES = {
     "hero.lead": "AS Software crea aplicaciones multiplataforma y herramientas para desarrolladores, desde el primer concepto hasta la publicación.",
     "hero.ctaApps": "Ver aplicaciones",
     "hero.ctaAbout": "Conocer AS Software",
-    "hero.caption": "Código que crece con cada idea.",
 
     "cap.label": "Áreas de actuación",
     "cap.mobile.text": "Experiencias consistentes en ambas plataformas.",

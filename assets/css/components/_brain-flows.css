@@ -3,69 +3,51 @@
    ========================================================================== */
 
 .brain-section {
-  border-bottom: 0.0625rem solid var(--color-border);
+  border-bottom: var(--border-hairline) solid var(--color-border);
 }
 
 .brain-layout {
   display: grid;
-  grid-template-columns: minmax(20rem, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.05fr);
   align-items: start;
-  gap: clamp(3rem, 6vw, 6rem);
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 
 /* Destaque do repositório */
 .brain-highlight {
-  padding: clamp(2rem, 4vw, 3.5rem);
-  border: 0.0625rem solid var(--color-border);
+  padding: var(--space-500);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-md);
   background: var(--color-bg-soft);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  transition: border-color var(--transition-fast);
 }
 
-.brain-highlight:hover {
-  border-color: var(--color-sage);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-0.35rem);
-}
+.brain-highlight:hover { border-color: var(--color-border-strong); }
 
 .brain-highlight__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-300);
-  margin-bottom: var(--space-500);
-}
-
-.brain-highlight__top svg {
-  width: 3rem;
-  fill: none;
-  stroke: var(--color-primary);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.2;
-}
-
-.brain-highlight__top span {
-  font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  margin-bottom: var(--space-200);
+  font-size: var(--fs-200);
   color: var(--color-text-muted);
 }
 
 .brain-highlight h3 {
-  font-size: clamp(2.25rem, 3.6vw, 3.8rem);
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
 }
 
-.brain-highlight > p {
-  margin-top: var(--space-300);
-  line-height: var(--lh-loose);
+.brain-highlight > p:not(.brain-highlight__top) {
+  margin-top: var(--space-200);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
 .brain-highlight p code,
 .skill-item p code {
   font-family: var(--font-mono);
-  font-size: 0.82em;
+  font-size: 0.88em;
+  color: var(--color-text);
 }
 
 .brain-command {
@@ -73,9 +55,10 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-300);
-  margin-block: var(--space-500) var(--space-400);
-  padding: var(--space-300) var(--space-400);
-  border: 0.0625rem solid var(--color-border);
+  margin-block: var(--space-400);
+  padding: var(--space-200) var(--space-300);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-sm);
   background: var(--color-surface);
 }
 
@@ -94,11 +77,9 @@
   flex-shrink: 0;
   align-items: center;
   gap: var(--space-100);
-  font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-primary);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
   transition: color var(--transition-fast);
 }
 
@@ -107,11 +88,11 @@
 }
 
 .brain-command__copy:hover {
-  color: var(--color-primary-hover);
+  color: var(--color-text);
 }
 
 .brain-command__copy.is-copied {
-  color: var(--color-sage);
+  color: var(--color-success);
 }
 
 .brain-command__copy svg {
@@ -123,30 +104,16 @@
   stroke-width: 1.5;
 }
 
-.brain-command span {
-  flex-shrink: 0;
-  font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  color: var(--color-primary);
-}
-
 .brain-highlight > a {
   display: inline-flex;
-  gap: var(--space-100);
-  font-family: var(--font-mono);
-  font-size: var(--fs-200);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  gap: var(--space-050);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semibold);
+  transition: color var(--transition-fast);
 }
 
-.brain-highlight > a span {
-  color: var(--color-primary);
-  transition: transform var(--transition-fast);
-}
-
-.brain-highlight > a:hover span {
-  transform: translate(0.12rem, -0.12rem);
-}
+.brain-highlight > a:hover { color: var(--color-primary); }
+.brain-highlight > a span { color: var(--color-text-muted); }
 
 /* Lista de skills */
 .skill-list {
@@ -155,10 +122,10 @@
 
 .skill-item {
   display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
+  grid-template-columns: 2rem minmax(0, 1fr);
   gap: var(--space-300);
   padding-block: var(--space-400);
-  border-top: 0.0625rem solid var(--color-border);
+  border-top: var(--border-hairline) solid var(--color-border);
 }
 
 .skill-item:first-child {
@@ -168,22 +135,22 @@
 
 .skill-item__index {
   font-family: var(--font-mono);
-  font-size: var(--fs-100);
-  letter-spacing: 0.06em;
-  color: var(--color-primary);
+  font-size: var(--fs-200);
+  line-height: 1.6;
+  color: var(--color-text-muted);
 }
 
 .skill-item h3 {
   font-family: var(--font-mono);
   font-size: var(--fs-400);
   font-weight: var(--fw-medium);
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
 }
 
 .skill-item p {
-  margin-top: var(--space-100);
+  margin-top: var(--space-050);
   font-size: var(--fs-300);
-  line-height: var(--lh-loose);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
@@ -196,10 +163,6 @@
 @media (max-width: 540px) {
   .brain-highlight {
     padding: var(--space-400);
-  }
-
-  .brain-highlight h3 {
-    font-size: var(--fs-650);
   }
 
   .brain-command {

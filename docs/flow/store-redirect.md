@@ -76,7 +76,7 @@ Cada app tem um link curto próprio em `ir/<slug>/` (`luma`, `celllab`, `flora`,
 
 - `navigator.userAgent` e `navigator.maxTouchPoints` (APIs nativas do navegador) para a detecção de plataforma.
 - `window.location.replace` (API nativa) para o redirecionamento.
-- Google Fonts (DM Mono, Manrope, Newsreader) — mesma dependência de CDN das páginas principais.
+- Google Fonts (Manrope; DM Mono só para código) — mesma dependência de CDN das páginas principais.
 
 ## Observações
 

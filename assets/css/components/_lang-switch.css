@@ -25,10 +25,8 @@ html:not(.js) .lang-switch { display: none; }
   gap: var(--space-100);
   min-height: 2.25rem;
   padding: var(--space-050) var(--space-100);
-  font-family: var(--font-mono);
-  font-size: var(--fs-200);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-medium);
   color: var(--color-text);
 }
 

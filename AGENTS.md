@@ -5,7 +5,7 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 ## Stack
 
 - HTML, CSS e JavaScript vanilla — sem framework, sem dependências de runtime
-- Única dependência externa: Google Fonts (DM Mono, Manrope, Newsreader) via CDN
+- Única dependência externa: Google Fonts (Manrope; DM Mono só para código) via CDN
 - Hospedagem: GitHub Pages na branch `master` (`CNAME`, `.nojekyll`)
 
 ## Estrutura

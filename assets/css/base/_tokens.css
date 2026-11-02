@@ -1,45 +1,49 @@
 :root {
-  /* Palette: parchment, ink and oxidised copper. */
-  --color-bg: #f3efe6;
-  --color-bg-soft: #f8f5ef;
-  --color-surface: #ebe5da;
-  --color-surface-dark: #183235;
-  --color-surface-dark-soft: rgba(24, 50, 53, 0.9);
-  --color-text: #172a2c;
-  --color-text-muted: #657170;
-  --color-primary: #bd5b39;
-  --color-primary-hover: #9d452b;
-  --color-primary-contrast: #fffaf2;
-  --color-accent: #bd5b39;
-  --color-sage: #809186;
-  --color-gold: #c8a36a;
-  --color-border: #d8cdbd;
-  --color-border-dark: #355052;
-  --color-white: #fffdf8;
+  /* Palette: neutros limpos + o cobre do logo como único acento. */
+  --color-bg: #fbfbfa;
+  --color-bg-soft: #ffffff;
+  --color-surface: #f1f1ef;
+  --color-surface-dark: #161616;
+  --color-surface-darker: #0f0f0f;
+  --color-text: #161616;
+  --color-text-muted: #5e5e5b;
+  --color-primary: #b4532f;
+  --color-primary-hover: #94421f;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #b4532f;
+  --color-success: #2f7a4f;
+  --color-border: #e3e3df;
+  --color-border-strong: #c9c9c4;
+  --color-border-dark: #2c2c2a;
+  --color-border-dark-strong: #4a4a47;
+  --color-white: #ffffff;
+  --color-on-dark: #f3f3f1;
+  --color-on-dark-muted: #a3a39e;
+  --color-on-dark-accent: #e0875f;
 
-  --font-heading: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-body: "Manrope", "Avenir Next", Arial, sans-serif;
+  --font-heading: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
 
-  --fs-100: 0.6875rem;
-  --fs-200: 0.75rem;
-  --fs-300: 0.875rem;
+  --fs-100: 0.75rem;
+  --fs-200: 0.8125rem;
+  --fs-300: 0.9375rem;
   --fs-400: 1rem;
-  --fs-500: 1.25rem;
-  --fs-600: 1.75rem;
-  --fs-650: 2.1rem;
-  --fs-700: clamp(2.4rem, 4.1vw, 4.1rem);
-  --fs-800: clamp(3.5rem, 6.3vw, 6.2rem);
+  --fs-500: 1.125rem;
+  --fs-600: 1.375rem;
+  --fs-650: 1.75rem;
+  --fs-700: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-800: clamp(2.5rem, 5vw, 4rem);
 
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
 
-  --lh-tight: 0.96;
-  --lh-snug: 1.16;
-  --lh-normal: 1.65;
-  --lh-loose: 1.85;
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.6;
+  --lh-loose: 1.7;
 
   --space-050: 0.25rem;
   --space-100: 0.5rem;
@@ -54,24 +58,27 @@
   --space-900: 8rem;
   --space-1000: 10rem;
 
-  --container-max: 90rem;
-  --container-copy: 78rem;
-  --container-padding: clamp(1.25rem, 4vw, 4rem);
-  --header-height: 5.75rem;
+  --container-max: 72rem;
+  --container-copy: 46rem;
+  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+  --header-height: 4.5rem;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 2rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 999rem;
+  --radius-app-icon: 22%;
 
-  --shadow-sm: 0 0.25rem 1rem rgba(23, 42, 44, 0.06);
-  --shadow-md: 0 1rem 3rem rgba(23, 42, 44, 0.1);
-  --shadow-lg: 0 2rem 5rem rgba(23, 42, 44, 0.14);
+  --shadow-sm: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 1rem 2.5rem rgba(0, 0, 0, 0.1);
 
-  --transition-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-base: 420ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  --border-hairline: 0.0625rem;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 500ms ease;
 
   --z-header: 100;
   --z-overlay: 200;

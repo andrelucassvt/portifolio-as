@@ -18,7 +18,7 @@ related_plans: ["docs/plan/apps-directory-page.md"]
 | Linguagem | HTML, CSS, JavaScript (vanilla) |
 | Framework | Nenhum (sem build tools, sem dependências de runtime) |
 | Gerenciador de pacotes | Nenhum |
-| Principais dependências | Google Fonts (DM Mono, Manrope, Newsreader) — única dependência externa, via CDN |
+| Principais dependências | Google Fonts (Manrope; DM Mono só para código) — única dependência externa, via CDN |
 | Hospedagem | GitHub Pages (branch `master`, `CNAME` → andresalvador.com, `.nojekyll`) |
 
 ## Arquitetura
@@ -64,7 +64,7 @@ _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não m
 | Utilities | `assets/css/utilities/_utilities.css` | Classes utilitárias, últimas no cascade |
 | JS | `assets/js/locales.js`, `assets/js/i18n.js` | Dicionários e motor de tradução (pt-BR, en, es) com seletor de idioma no header; escolha salva em `localStorage` |
 | JS | `assets/js/main.js` | JS das funcionalidades, compartilhado por todas as páginas: redirecionamento de `ir/<slug>/` para a loja, nav mobile, header no scroll, reveal via IntersectionObserver, botão de copiar comando de instalação, cópia do link curto no detalhe de `apps.html`, alternância lista/detalhe de `apps.html`, ano atual |
-| Imagens | `assets/img/` | Favicon, hero (webp/png), og-cover, ícones dos apps em `apps/` |
+| Imagens | `assets/img/` | Favicon, og-cover, ícones dos apps em `apps/` (a ilustração `hero-code-garden-v2.*` não é mais referenciada) |
 
 ## Configuração
 
@@ -80,7 +80,7 @@ _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não m
 
 | Pacote | Versão | Uso no projeto |
 |--------|--------|---------------|
-| Google Fonts (DM Mono, Manrope, Newsreader) | — | Tipografia do site, carregada via `<link>` no `<head>` |
+| Google Fonts (Manrope; DM Mono só para código) | — | Tipografia do site, carregada via `<link>` no `<head>` |
 | GitHub CLI (`gh`) | — | Usado por `deploy.sh` para consultar o status do build do Pages |
 | Python 3 | — | Servidor local de desenvolvimento (`http.server 4173`) |
 

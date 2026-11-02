@@ -3,16 +3,14 @@
   inset: 0 0 auto;
   z-index: var(--z-header);
   height: var(--header-height);
-  border-bottom: 0.0625rem solid rgba(216, 205, 189, 0.72);
-  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+  border-bottom: var(--border-hairline) solid transparent;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
 }
 
 .site-header.is-scrolled {
   position: fixed;
-  background: rgba(243, 239, 230, 0.92);
-  box-shadow: var(--shadow-sm);
-  -webkit-backdrop-filter: blur(1rem);
-  backdrop-filter: blur(1rem);
+  border-bottom-color: var(--color-border);
+  background: var(--color-bg);
 }
 
 .site-header__inner {
@@ -30,23 +28,27 @@
 }
 
 .brand__mark {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   overflow: visible;
   fill: none;
   stroke: var(--color-primary);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.2;
+  stroke-width: 1.4;
 }
 
 .brand__name {
   font-family: var(--font-heading);
   font-size: var(--fs-500);
+  font-weight: var(--fw-medium);
   letter-spacing: -0.02em;
 }
 
-.brand__name strong { color: var(--color-primary); }
+.brand__name strong {
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
 
 .site-header__actions {
   display: flex;
@@ -59,23 +61,19 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-100);
-  padding-bottom: var(--space-050);
-  border-bottom: 0.0625rem solid var(--color-text);
-  font-family: var(--font-mono);
-  font-size: var(--fs-200);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semibold);
+  transition: color var(--transition-fast);
 }
+
+.header-contact:hover { color: var(--color-primary); }
 
 .header-contact svg {
   width: 1rem;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.4;
-  transition: transform var(--transition-fast);
+  stroke-width: 1.6;
 }
-
-.header-contact:hover svg { transform: translateX(0.2rem); }
 
 .site-header__toggle { display: none; }
 
@@ -100,14 +98,14 @@
 
   .site-header__toggle span {
     display: block;
-    width: 1.6rem;
-    height: 0.0625rem;
+    width: 1.5rem;
+    height: 0.125rem;
     background: var(--color-text);
     transition: transform var(--transition-fast);
   }
 
-  .site-header__toggle[aria-expanded="true"] span:first-child { transform: translateY(0.23rem) rotate(45deg); }
-  .site-header__toggle[aria-expanded="true"] span:last-child { transform: translateY(-0.23rem) rotate(-45deg); }
+  .site-header__toggle[aria-expanded="true"] span:first-child { transform: translateY(0.26rem) rotate(45deg); }
+  .site-header__toggle[aria-expanded="true"] span:last-child { transform: translateY(-0.26rem) rotate(-45deg); }
 
   .nav-backdrop {
     position: fixed;

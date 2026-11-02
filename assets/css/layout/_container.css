@@ -10,11 +10,11 @@
 }
 
 .section {
-  padding-block: var(--space-1000);
+  padding-block: var(--space-800);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-block: var(--space-800);
+    padding-block: var(--space-700);
   }
 }

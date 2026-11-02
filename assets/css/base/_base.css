@@ -12,19 +12,9 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
   color: var(--color-text);
   background: var(--color-bg);
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.35;
-  content: "";
-  background-image: radial-gradient(rgba(23, 42, 44, 0.13) 0.035rem, transparent 0.035rem);
-  background-size: 0.28rem 0.28rem;
 }
 
 h1,
@@ -32,9 +22,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-semibold);
   line-height: var(--lh-tight);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
   color: var(--color-text);
 }
 
@@ -43,10 +33,12 @@ h2 { font-size: var(--fs-700); }
 h3 { font-size: var(--fs-600); }
 h4 { font-size: var(--fs-500); }
 
+/* Os títulos ainda trazem <em> nos dicionários; ele é lido como parte da
+   frase, sem itálico nem cor de destaque. */
 h1 em,
 h2 em {
-  font-weight: var(--fw-regular);
-  color: var(--color-primary);
+  font-style: normal;
+  color: inherit;
 }
 
 p { max-width: 65ch; }
@@ -79,7 +71,3 @@ small {
 }
 
 .skip-link:focus { transform: translateY(0); }
-
-@media (max-width: 768px) {
-  body { font-size: var(--fs-300); }
-}
