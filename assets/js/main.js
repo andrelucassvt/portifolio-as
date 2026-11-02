@@ -1,3 +1,6 @@
+// Tradução com fallback em pt-BR caso i18n.js não tenha carregado.
+const t = (key, fallback) => (window.i18n ? window.i18n.t(key) : fallback);
+
 document.addEventListener("DOMContentLoaded", () => {
   initStoreRedirect();
   initMobileNav();
@@ -23,10 +26,18 @@ function initMobileNav() {
     header?.classList.toggle("site-header--menu-open", isOpen);
     backdrop?.classList.toggle("nav-backdrop--visible", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    syncToggleLabel();
+  };
+
+  const syncToggleLabel = () => {
+    const isOpen = nav.classList.contains("nav--open");
+    toggle.setAttribute("aria-label", isOpen ? t("nav.close", "Fechar menu") : t("nav.open", "Abrir menu"));
   };
 
   const closeMenu = () => setMenuState(false);
+
+  syncToggleLabel();
+  document.addEventListener("i18n:change", syncToggleLabel);
 
   toggle.addEventListener("click", () => {
     setMenuState(!nav.classList.contains("nav--open"));
@@ -112,11 +123,11 @@ function initCommandCopy() {
       await copyText(command);
 
       button.classList.add("is-copied");
-      if (label) label.textContent = "Copiado";
+      if (label) label.textContent = t("common.copied", "Copiado");
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         button.classList.remove("is-copied");
-        if (label) label.textContent = defaultLabel;
+        if (label) label.textContent = t("brain.copy", defaultLabel);
       }, 1600);
     });
   });
@@ -153,11 +164,11 @@ function initShortLinkCopy() {
       await copyText(url);
 
       button.classList.add("is-copied");
-      if (label) label.textContent = "Copiado";
+      if (label) label.textContent = t("common.copied", "Copiado");
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         button.classList.remove("is-copied");
-        if (label) label.textContent = defaultLabel;
+        if (label) label.textContent = t("apps.copyLink", defaultLabel);
       }, 1600);
     });
   });

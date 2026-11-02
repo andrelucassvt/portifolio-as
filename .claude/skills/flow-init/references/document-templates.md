@@ -15,7 +15,6 @@ source_commit: abc1234
 source_state: clean
 verified_at: YYYY-MM-DD
 status: current
-related_plans: []
 ---
 
 # Estrutura do Projeto: [Nome do Projeto]
@@ -88,7 +87,6 @@ source_commit: abc1234
 source_state: clean
 verified_at: YYYY-MM-DD
 status: current
-related_plans: []
 ---
 
 # Sugestões de Flows a Documentar

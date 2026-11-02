@@ -1,0 +1,97 @@
+/* Seletor de idioma (dropdown com bandeiras) — comportamento em assets/js/i18n.js.
+   Sem JS o seletor não faz nada, então fica oculto. */
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.lang-switch { position: relative; }
+
+html:not(.js) .lang-switch { display: none; }
+
+.lang-switch__flag {
+  flex: none;
+  width: 1.5rem;
+  height: 1rem;
+  border-radius: 0.125rem;
+  box-shadow: 0 0 0 0.0625rem var(--color-border);
+}
+
+.lang-switch__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-100);
+  min-height: 2.25rem;
+  padding: var(--space-050) var(--space-100);
+  font-family: var(--font-mono);
+  font-size: var(--fs-200);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.lang-switch__chevron {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+  transition: transform var(--transition-fast);
+}
+
+.lang-switch__trigger[aria-expanded="true"] .lang-switch__chevron { transform: rotate(180deg); }
+
+.lang-switch__menu {
+  position: absolute;
+  top: calc(100% + var(--space-100));
+  right: 0;
+  z-index: var(--z-header);
+  min-width: 10.5rem;
+  padding: var(--space-100);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.lang-switch__menu[hidden] { display: none; }
+
+.lang-switch__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  width: 100%;
+  padding: var(--space-150) var(--space-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-300);
+  text-align: left;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.lang-switch__option:hover,
+.lang-switch__option:focus-visible {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.lang-switch__option[aria-current="true"] {
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
+
+.lang-switch__trigger:focus-visible,
+.lang-switch__option:focus-visible {
+  outline: 0.125rem solid var(--color-primary);
+  outline-offset: 0.125rem;
+}
+
+@media (max-width: 900px) {
+  /* Mantém o seletor acima do menu aberto, ao lado do botão de fechar. */
+  .lang-switch { z-index: calc(var(--z-overlay) + 1); }
+  .lang-switch__menu { z-index: calc(var(--z-overlay) + 2); }
+}

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f3efe6">
-  <meta name="description" content="Todos os aplicativos da AS Software para Android e iOS: Luma create, CellLab +, Flora, Salvaterra FM e Arrow Army.">
-  <title>Aplicativos — AS Software</title>
+  <meta name="description" content="Todos os aplicativos da AS Software para Android e iOS: Luma create, CellLab +, Flora, Salvaterra FM e Arrow Army." data-i18n-attr="content:meta.apps.description">
+  <title data-i18n="meta.apps.title">Aplicativos — AS Software</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/base/_base.css">
   <link rel="stylesheet" href="assets/css/layout/_container.css">
   <link rel="stylesheet" href="assets/css/layout/_grid.css">
-  <link rel="stylesheet" href="assets/css/layout/_header.css">
+  <link rel="stylesheet" href="assets/css/layout/_header.css?v=20261102">
   <link rel="stylesheet" href="assets/css/layout/_footer.css">
   <link rel="stylesheet" href="assets/css/components/_button.css">
   <link rel="stylesheet" href="assets/css/components/_nav.css">
@@ -25,37 +25,58 @@
   <link rel="stylesheet" href="assets/css/components/_portfolio.css">
   <link rel="stylesheet" href="assets/css/components/_brain-flows.css">
   <link rel="stylesheet" href="assets/css/components/_app-directory.css?v=20261017">
+  <link rel="stylesheet" href="assets/css/components/_lang-switch.css?v=20261103">
   <link rel="stylesheet" href="assets/css/utilities/_utilities.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="flag-br" viewBox="0 0 24 16"><rect width="24" height="16" fill="#009b3a"/><path d="M12 2.2 21.4 8 12 13.8 2.6 8Z" fill="#fedf00"/><circle cx="12" cy="8" r="3.3" fill="#002776"/></symbol>
+    <symbol id="flag-gb" viewBox="0 0 24 16"><rect width="24" height="16" fill="#012169"/><path d="M0 0 24 16M24 0 0 16" stroke="#fff" stroke-width="3"/><path d="M0 0 24 16M24 0 0 16" stroke="#c8102e" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#c8102e" stroke-width="3"/></symbol>
+    <symbol id="flag-es" viewBox="0 0 24 16"><rect width="24" height="16" fill="#aa151b"/><rect y="4" width="24" height="8" fill="#f1bf00"/></symbol>
+  </svg>
+  <a class="skip-link" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
 
   <header class="site-header" data-header>
     <div class="container site-header__inner">
-      <a href="index.html#inicio" class="brand" aria-label="AS Software — início">
+      <a href="index.html#inicio" class="brand" aria-label="AS Software — início" data-i18n-attr="aria-label:brand.home">
         <span class="brand__name"><strong>AS</strong> Software</span>
       </a>
 
-      <nav class="nav" id="menu-principal" aria-label="Navegação principal" data-nav>
+      <nav class="nav" id="menu-principal" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.label" data-nav>
         <ul class="nav__list">
-          <li><a href="index.html#apps" class="nav__link">Aplicativos</a></li>
-          <li><a href="apps.html" class="nav__link" aria-current="page">Todos os apps</a></li>
+          <li><a href="index.html#apps" class="nav__link" data-i18n="nav.apps">Aplicativos</a></li>
+          <li><a href="apps.html" class="nav__link" aria-current="page" data-i18n="nav.allApps">Todos os apps</a></li>
           <li><a href="index.html#plugins" class="nav__link">Open Source</a></li>
           <li><a href="index.html#brain-flows" class="nav__link">Brain Flows</a></li>
-          <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
-          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+          <li><a href="index.html#sobre" class="nav__link" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="index.html#contato" class="nav__link" data-i18n="nav.contact">Contato</a></li>
         </ul>
       </nav>
 
-      <a class="header-contact" href="mailto:anl.software.contato@gmail.com">
-        <span>Vamos conversar</span>
-        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
-      </a>
+      <div class="site-header__actions">
+        <a class="header-contact" href="mailto:anl.software.contato@gmail.com">
+          <span data-i18n="header.contact">Vamos conversar</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
 
-      <button class="site-header__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal" data-nav-toggle>
-        <span></span><span></span>
-      </button>
+        <div class="lang-switch" data-lang-switch>
+          <button class="lang-switch__trigger" type="button" aria-label="Idioma" aria-haspopup="true" aria-expanded="false" aria-controls="menu-idioma" data-lang-trigger>
+            <svg class="lang-switch__flag" viewBox="0 0 24 16" aria-hidden="true"><use href="#flag-br" data-lang-flag/></svg>
+            <span data-lang-label>PT</span>
+            <svg class="lang-switch__chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5"/></svg>
+          </button>
+          <ul class="lang-switch__menu" id="menu-idioma" hidden data-lang-menu>
+            <li><button class="lang-switch__option" type="button" lang="pt-BR" data-lang="pt-BR" data-lang-code="PT" data-lang-name="Português" data-flag="br"><svg class="lang-switch__flag" viewBox="0 0 24 16" aria-hidden="true"><use href="#flag-br"/></svg><span>Português</span></button></li>
+            <li><button class="lang-switch__option" type="button" lang="en" data-lang="en" data-lang-code="EN" data-lang-name="English" data-flag="gb"><svg class="lang-switch__flag" viewBox="0 0 24 16" aria-hidden="true"><use href="#flag-gb"/></svg><span>English</span></button></li>
+            <li><button class="lang-switch__option" type="button" lang="es" data-lang="es" data-lang-code="ES" data-lang-name="Español" data-flag="es"><svg class="lang-switch__flag" viewBox="0 0 24 16" aria-hidden="true"><use href="#flag-es"/></svg><span>Español</span></button></li>
+          </ul>
+        </div>
+
+        <button class="site-header__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal" data-nav-toggle>
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -64,58 +85,58 @@
   <main id="conteudo">
     <section class="section apps-section" id="apps">
       <div class="container">
-        <a class="app-directory__back" href="index.html#apps">← Voltar para o site</a>
+        <a class="app-directory__back" href="index.html#apps" data-i18n="apps.backSite">← Voltar para o site</a>
 
         <div class="collection-heading" data-reveal>
           <div>
-            <p class="eyebrow"><span></span> Aplicativos</p>
-            <h1>Todos os <em>aplicativos da AS Software.</em></h1>
+            <p class="eyebrow" data-i18n="apps.listEyebrow"><span></span> Aplicativos</p>
+            <h1 data-i18n-html="apps.listTitle">Todos os <em>aplicativos da AS Software.</em></h1>
           </div>
-          <p>Escolha um aplicativo para ver os detalhes e baixar na loja da sua plataforma.</p>
+          <p data-i18n="apps.listIntro">Escolha um aplicativo para ver os detalhes e baixar na loja da sua plataforma.</p>
         </div>
 
         <div class="app-list" data-app-directory>
           <a class="app-list__item app-list__item--luma" href="#app-detail-luma">
-            <span class="app-list__icon"><img src="assets/img/apps/luma-create.webp" width="512" height="512" alt="Ícone do aplicativo Luma create"></span>
+            <span class="app-list__icon"><img src="assets/img/apps/luma-create.webp" width="512" height="512" alt="Ícone do aplicativo Luma create" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Luma create"></span>
             <span class="app-list__body">
               <span class="app-list__name">Luma create</span>
-              <span class="app-list__category">IA criativa</span>
+              <span class="app-list__category" data-i18n="app.luma.category">IA criativa</span>
             </span>
             <span class="app-list__arrow" aria-hidden="true">↗</span>
           </a>
 
           <a class="app-list__item app-list__item--celllab" href="#app-detail-celllab">
-            <span class="app-list__icon"><img src="assets/img/apps/celllab.webp" width="512" height="512" alt="Ícone do aplicativo CellLab +"></span>
+            <span class="app-list__icon"><img src="assets/img/apps/celllab.webp" width="512" height="512" alt="Ícone do aplicativo CellLab +" data-i18n-attr="alt:app.iconAlt" data-i18n-name="CellLab +"></span>
             <span class="app-list__body">
               <span class="app-list__name">CellLab +</span>
-              <span class="app-list__category">Ciência</span>
+              <span class="app-list__category" data-i18n="app.celllab.category">Ciência</span>
             </span>
             <span class="app-list__arrow" aria-hidden="true">↗</span>
           </a>
 
           <a class="app-list__item app-list__item--flora" href="#app-detail-flora">
-            <span class="app-list__icon"><img src="assets/img/apps/flora.webp" width="512" height="512" alt="Ícone do aplicativo Flora"></span>
+            <span class="app-list__icon"><img src="assets/img/apps/flora.webp" width="512" height="512" alt="Ícone do aplicativo Flora" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Flora"></span>
             <span class="app-list__body">
               <span class="app-list__name">Flora</span>
-              <span class="app-list__category">Bem-estar</span>
+              <span class="app-list__category" data-i18n="app.flora.category">Bem-estar</span>
             </span>
             <span class="app-list__arrow" aria-hidden="true">↗</span>
           </a>
 
           <a class="app-list__item app-list__item--radio" href="#app-detail-radio">
-            <span class="app-list__icon"><img src="assets/img/apps/salvaterra-fm.webp" width="512" height="512" alt="Ícone do aplicativo Salvaterra FM"></span>
+            <span class="app-list__icon"><img src="assets/img/apps/salvaterra-fm.webp" width="512" height="512" alt="Ícone do aplicativo Salvaterra FM" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Salvaterra FM"></span>
             <span class="app-list__body">
               <span class="app-list__name">Salvaterra FM</span>
-              <span class="app-list__category">Comunicação</span>
+              <span class="app-list__category" data-i18n="app.radio.category">Comunicação</span>
             </span>
             <span class="app-list__arrow" aria-hidden="true">↗</span>
           </a>
 
           <a class="app-list__item app-list__item--arrow-army" href="#app-detail-arrow-army">
-            <span class="app-list__icon"><img src="assets/img/apps/arrow-army.webp" width="512" height="512" alt="Ícone do aplicativo Arrow Army"></span>
+            <span class="app-list__icon"><img src="assets/img/apps/arrow-army.webp" width="512" height="512" alt="Ícone do aplicativo Arrow Army" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Arrow Army"></span>
             <span class="app-list__body">
               <span class="app-list__name">Arrow Army</span>
-              <span class="app-list__category">Jogo</span>
+              <span class="app-list__category" data-i18n="app.arrow.category">Jogo</span>
             </span>
             <span class="app-list__arrow" aria-hidden="true">↗</span>
           </a>
@@ -123,86 +144,86 @@
 
         <article class="app-detail app-detail--luma" id="app-detail-luma" data-app-detail>
           <div class="app-detail__visual">
-            <img src="assets/img/apps/luma-create.webp" width="512" height="512" alt="Ícone do aplicativo Luma create">
+            <img src="assets/img/apps/luma-create.webp" width="512" height="512" alt="Ícone do aplicativo Luma create" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Luma create">
           </div>
           <h2 class="app-detail__title" tabindex="-1">Luma create</h2>
-          <p class="app-detail__category">IA criativa</p>
-          <p class="app-detail__description">Transforma descrições em vídeos e imagens com inteligência artificial, com opções de qualidade para diferentes ideias e formatos.</p>
+          <p class="app-detail__category" data-i18n="app.luma.category">IA criativa</p>
+          <p class="app-detail__description" data-i18n="app.luma.desc">Transforma descrições em vídeos e imagens com inteligência artificial, com opções de qualidade para diferentes ideias e formatos.</p>
           <div class="app-detail__actions">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.andre.luma_vid" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.6c0-.9 1-1.5 1.8-1L19.4 10c.8.5.8 1.6 0 2.1L6.8 19.5c-.8.5-1.8-.1-1.8-1V3.6Z"/></svg>Google Play</a>
             <a class="btn btn--secondary" href="https://apps.apple.com/br/app/luma-create-ai-studio/id6757760221" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.7-3-2-3.7-2-1.6-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5.8-1.1 1.2-2.2 1.4-2.7-1.7-.7-2.9-2.4-2.9-4.1Z"/><path d="M13.7 4.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.1.1 2.3-.6 3-1.6Z"/></svg>App Store</a>
           </div>
           <div class="app-detail__footer">
-            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/luma/" aria-label="Copiar link do app Luma create"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar link</span></button>
-            <a class="app-detail__back" href="#apps" data-app-back>← Voltar para a lista</a>
+            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/luma/" aria-label="Copiar link do app Luma create" data-i18n-attr="aria-label:apps.copyLinkAria" data-i18n-name="Luma create"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="apps.copyLink">Copiar link</span></button>
+            <a class="app-detail__back" href="#apps" data-app-back data-i18n="apps.backList">← Voltar para a lista</a>
           </div>
         </article>
 
         <article class="app-detail app-detail--celllab" id="app-detail-celllab" data-app-detail>
           <div class="app-detail__visual">
-            <img src="assets/img/apps/celllab.webp" width="512" height="512" alt="Ícone do aplicativo CellLab +">
+            <img src="assets/img/apps/celllab.webp" width="512" height="512" alt="Ícone do aplicativo CellLab +" data-i18n-attr="alt:app.iconAlt" data-i18n-name="CellLab +">
           </div>
           <h2 class="app-detail__title" tabindex="-1">CellLab +</h2>
-          <p class="app-detail__category">Ciência</p>
-          <p class="app-detail__description">Um laboratório digital para planejar experimentos, analisar viabilidade celular por MTT e apoiar rotinas de contagem e plaqueamento.</p>
+          <p class="app-detail__category" data-i18n="app.celllab.category">Ciência</p>
+          <p class="app-detail__description" data-i18n="app.celllab.desc">Um laboratório digital para planejar experimentos, analisar viabilidade celular por MTT e apoiar rotinas de contagem e plaqueamento.</p>
           <div class="app-detail__actions">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.andre.projectlab" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.6c0-.9 1-1.5 1.8-1L19.4 10c.8.5.8 1.6 0 2.1L6.8 19.5c-.8.5-1.8-.1-1.8-1V3.6Z"/></svg>Google Play</a>
             <a class="btn btn--secondary" href="https://apps.apple.com/br/app/celllab/id6499239786" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.7-3-2-3.7-2-1.6-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5.8-1.1 1.2-2.2 1.4-2.7-1.7-.7-2.9-2.4-2.9-4.1Z"/><path d="M13.7 4.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.1.1 2.3-.6 3-1.6Z"/></svg>App Store</a>
           </div>
           <div class="app-detail__footer">
-            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/celllab/" aria-label="Copiar link do app CellLab +"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar link</span></button>
-            <a class="app-detail__back" href="#apps" data-app-back>← Voltar para a lista</a>
+            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/celllab/" aria-label="Copiar link do app CellLab +" data-i18n-attr="aria-label:apps.copyLinkAria" data-i18n-name="CellLab +"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="apps.copyLink">Copiar link</span></button>
+            <a class="app-detail__back" href="#apps" data-app-back data-i18n="apps.backList">← Voltar para a lista</a>
           </div>
         </article>
 
         <article class="app-detail app-detail--flora" id="app-detail-flora" data-app-detail>
           <div class="app-detail__visual">
-            <img src="assets/img/apps/flora.webp" width="512" height="512" alt="Ícone do aplicativo Flora">
+            <img src="assets/img/apps/flora.webp" width="512" height="512" alt="Ícone do aplicativo Flora" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Flora">
           </div>
           <h2 class="app-detail__title" tabindex="-1">Flora</h2>
-          <p class="app-detail__category">Bem-estar</p>
-          <p class="app-detail__description">Acompanha ciclo, sintomas, humor e previsões de forma acolhedora, mantendo os dados pessoais armazenados no próprio dispositivo.</p>
+          <p class="app-detail__category" data-i18n="app.flora.category">Bem-estar</p>
+          <p class="app-detail__description" data-i18n="app.flora.desc">Acompanha ciclo, sintomas, humor e previsões de forma acolhedora, mantendo os dados pessoais armazenados no próprio dispositivo.</p>
           <div class="app-detail__actions">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.andre.Cycla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.6c0-.9 1-1.5 1.8-1L19.4 10c.8.5.8 1.6 0 2.1L6.8 19.5c-.8.5-1.8-.1-1.8-1V3.6Z"/></svg>Google Play</a>
             <a class="btn btn--secondary" href="https://apps.apple.com/br/app/flora-calend%C3%A1rio-menstrual/id6789702093" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.7-3-2-3.7-2-1.6-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5.8-1.1 1.2-2.2 1.4-2.7-1.7-.7-2.9-2.4-2.9-4.1Z"/><path d="M13.7 4.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.1.1 2.3-.6 3-1.6Z"/></svg>App Store</a>
           </div>
           <div class="app-detail__footer">
-            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/flora/" aria-label="Copiar link do app Flora"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar link</span></button>
-            <a class="app-detail__back" href="#apps" data-app-back>← Voltar para a lista</a>
+            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/flora/" aria-label="Copiar link do app Flora" data-i18n-attr="aria-label:apps.copyLinkAria" data-i18n-name="Flora"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="apps.copyLink">Copiar link</span></button>
+            <a class="app-detail__back" href="#apps" data-app-back data-i18n="apps.backList">← Voltar para a lista</a>
           </div>
         </article>
 
         <article class="app-detail app-detail--radio" id="app-detail-radio" data-app-detail>
           <div class="app-detail__visual">
-            <img src="assets/img/apps/salvaterra-fm.webp" width="512" height="512" alt="Ícone do aplicativo Salvaterra FM">
+            <img src="assets/img/apps/salvaterra-fm.webp" width="512" height="512" alt="Ícone do aplicativo Salvaterra FM" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Salvaterra FM">
           </div>
           <h2 class="app-detail__title" tabindex="-1">Salvaterra FM</h2>
-          <p class="app-detail__category">Comunicação</p>
-          <p class="app-detail__description">Leva a programação da rádio comunitária 87,9 FM de Salvaterra, na Ilha de Marajó, para ouvintes em qualquer lugar.</p>
+          <p class="app-detail__category" data-i18n="app.radio.category">Comunicação</p>
+          <p class="app-detail__description" data-i18n="app.radio.desc">Leva a programação da rádio comunitária 87,9 FM de Salvaterra, na Ilha de Marajó, para ouvintes em qualquer lugar.</p>
           <div class="app-detail__actions">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.andre.radiosalvaterrafm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.6c0-.9 1-1.5 1.8-1L19.4 10c.8.5.8 1.6 0 2.1L6.8 19.5c-.8.5-1.8-.1-1.8-1V3.6Z"/></svg>Google Play</a>
             <a class="btn btn--secondary" href="https://apps.apple.com/br/app/salvaterra-fm/id6443883925" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.7-3-2-3.7-2-1.6-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5.8-1.1 1.2-2.2 1.4-2.7-1.7-.7-2.9-2.4-2.9-4.1Z"/><path d="M13.7 4.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.1.1 2.3-.6 3-1.6Z"/></svg>App Store</a>
           </div>
           <div class="app-detail__footer">
-            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/salvaterra/" aria-label="Copiar link do app Salvaterra FM"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar link</span></button>
-            <a class="app-detail__back" href="#apps" data-app-back>← Voltar para a lista</a>
+            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/salvaterra/" aria-label="Copiar link do app Salvaterra FM" data-i18n-attr="aria-label:apps.copyLinkAria" data-i18n-name="Salvaterra FM"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="apps.copyLink">Copiar link</span></button>
+            <a class="app-detail__back" href="#apps" data-app-back data-i18n="apps.backList">← Voltar para a lista</a>
           </div>
         </article>
 
         <article class="app-detail app-detail--arrow-army" id="app-detail-arrow-army" data-app-detail>
           <div class="app-detail__visual">
-            <img src="assets/img/apps/arrow-army.webp" width="512" height="512" alt="Ícone do aplicativo Arrow Army">
+            <img src="assets/img/apps/arrow-army.webp" width="512" height="512" alt="Ícone do aplicativo Arrow Army" data-i18n-attr="alt:app.iconAlt" data-i18n-name="Arrow Army">
           </div>
           <h2 class="app-detail__title" tabindex="-1">Arrow Army</h2>
-          <p class="app-detail__category">Jogo</p>
-          <p class="app-detail__description">Jogo casual 3D de arrastar e mirar: recrute arqueiros nos painéis +1, evite os portões traiçoeiros e derrube o exército vermelho.</p>
+          <p class="app-detail__category" data-i18n="app.arrow.category">Jogo</p>
+          <p class="app-detail__description" data-i18n="app.arrow.desc">Jogo casual 3D de arrastar e mirar: recrute arqueiros nos painéis +1, evite os portões traiçoeiros e derrube o exército vermelho.</p>
           <div class="app-detail__actions">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.andre.gamefunmobile" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.6c0-.9 1-1.5 1.8-1L19.4 10c.8.5.8 1.6 0 2.1L6.8 19.5c-.8.5-1.8-.1-1.8-1V3.6Z"/></svg>Google Play</a>
             <a class="btn btn--secondary" href="https://apps.apple.com/br/app/arrow-army/id6821693055" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.7-3-2-3.7-2-1.6-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5.8-1.1 1.2-2.2 1.4-2.7-1.7-.7-2.9-2.4-2.9-4.1Z"/><path d="M13.7 4.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.1.1 2.3-.6 3-1.6Z"/></svg>App Store</a>
           </div>
           <div class="app-detail__footer">
-            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/arrow-army/" aria-label="Copiar link do app Arrow Army"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite">Copiar link</span></button>
-            <a class="app-detail__back" href="#apps" data-app-back>← Voltar para a lista</a>
+            <button class="app-detail__copy" type="button" data-copy-short-link data-short-url="https://andresalvador.com/ir/arrow-army/" aria-label="Copiar link do app Arrow Army" data-i18n-attr="aria-label:apps.copyLinkAria" data-i18n-name="Arrow Army"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="apps.copyLink">Copiar link</span></button>
+            <a class="app-detail__back" href="#apps" data-app-back data-i18n="apps.backList">← Voltar para a lista</a>
           </div>
         </article>
       </div>
@@ -211,26 +232,28 @@
 
   <footer class="site-footer">
     <div class="container site-footer__top">
-      <a href="index.html#inicio" class="brand brand--footer" aria-label="AS Software — voltar ao início">
+      <a href="index.html#inicio" class="brand brand--footer" aria-label="AS Software — voltar ao início" data-i18n-attr="aria-label:brand.top">
         <svg class="brand__mark" viewBox="0 0 46 46" aria-hidden="true">
           <path d="M23 3.5 41.5 14v18L23 42.5 4.5 32V14L23 3.5Z"/>
           <path d="m12.5 29.5 6.8-16h7.1l7.1 16M15.4 23.2h15.2"/>
         </svg>
         <span class="brand__name"><strong>AS</strong> Software</span>
       </a>
-      <p>Aplicativos multiplataforma e ferramentas para desenvolvedores.</p>
+      <p data-i18n="footer.tagline">Aplicativos multiplataforma e ferramentas para desenvolvedores.</p>
       <div class="site-footer__nav">
-        <a href="index.html#apps">Aplicativos</a><a href="apps.html">Todos os apps</a><a href="index.html#plugins">Plugins Open Source</a><a href="index.html#brain-flows">Brain Flows</a><a href="index.html#sobre">Sobre</a>
+        <a href="index.html#apps" data-i18n="nav.apps">Aplicativos</a><a href="apps.html" data-i18n="nav.allApps">Todos os apps</a><a href="index.html#plugins" data-i18n="footer.plugins">Plugins Open Source</a><a href="index.html#brain-flows">Brain Flows</a><a href="index.html#sobre" data-i18n="nav.about">Sobre</a>
       </div>
       <a class="site-footer__email" href="mailto:anl.software.contato@gmail.com">anl.software.contato@gmail.com</a>
     </div>
     <div class="container site-footer__bottom">
-      <small>© <span data-year>2026</span> AS Software. Todos os direitos reservados.</small>
+      <small>© <span data-year>2026</span> <span data-i18n="footer.rights">AS Software. Todos os direitos reservados.</span></small>
       <small>André Salvador · CNPJ 55.108.099/0001-31</small>
-      <a href="index.html#inicio">Voltar ao topo ↑</a>
+      <a href="index.html#inicio" data-i18n="footer.top">Voltar ao topo ↑</a>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261017"></script>
+  <script src="assets/js/locales.js?v=20261102"></script>
+  <script src="assets/js/i18n.js?v=20261103"></script>
+  <script src="assets/js/main.js?v=20261102"></script>
 </body>
 </html>

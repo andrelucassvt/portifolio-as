@@ -17,7 +17,6 @@ source_commit: abc1234
 source_state: clean
 verified_at: YYYY-MM-DD
 status: current
-related_plans: []
 ---
 
 # Flow: [Nome do Fluxo]
@@ -86,22 +85,21 @@ Confronte o documento final com o código analisado antes de salvar:
 - Não restaram placeholders ou afirmações sem evidência?
 - Em uma atualização, as seções customizadas anteriores foram preservadas?
 - `source_commit` e `source_state` correspondem ao estado analisado?
-- `related_plans` lista somente planos realmente relacionados, ou permanece `[]`?
 
 Corrija divergências antes de salvar. Se algum item não puder ser confirmado, descreva a limitação em **Observações** e use `status: possibly-stale` em vez de apresentar o documento como atual.
 
 ## Critérios de utilidade
 
-A checklist acima garante que o documento está **certo**. Estes critérios garantem que ele **serve** — um flow exato mas vago passa na checklist e não ajuda ninguém. O flow é insumo do `brainstorming`, que seleciona quais abrir lendo apenas a linha `**Resumo:**` de cada arquivo.
+A checklist acima garante que o documento está **certo**. Estes critérios garantem que ele **serve** — um flow exato mas vago passa na checklist e não ajuda ninguém. O agente seleciona quais flows abrir lendo apenas a linha `**Resumo:**` de cada arquivo, conforme o bloco de flows do `AGENTS.md`.
 
-- **O Resumo distingue este flow dos demais?** Ele é o que o `brainstorming` lê para escolher por relevância semântica. "Gerencia o login do usuário" não discrimina nada; diga o que este fluxo faz que os vizinhos não fazem.
+- **O Resumo distingue este flow dos demais?** Ele é o que o agente lê para escolher por relevância semântica. "Gerencia o login do usuário" não discrimina nada; diga o que este fluxo faz que os vizinhos não fazem.
 - **Dá para depurar um problema do fluxo com o documento aberto e o código fechado?** Se for preciso ler os arquivos para entender o caminho, o Passo a Passo está raso demais.
 - **As regras listadas são regras de negócio de fato?** Guard clause, null check e early return são controle de fluxo, não regra. Regra é a decisão que alguém tomou sobre o produto.
 - **As Observações dizem algo que o código não diz sozinho?** Ponto frágil, divergência entre nome e comportamento, TODO relevante. Elogio à estrutura não é observação.
 
 ### Anti-padrões
 
-**F1 — Resumo genérico.** Uma frase que serviria para metade dos flows do projeto. Quebra a seleção por relevância no `brainstorming`.
+**F1 — Resumo genérico.** Uma frase que serviria para metade dos flows do projeto. Quebra a seleção por relevância antes de cada tarefa.
 
 **F2 — Passo-eco.** O passo repete o nome do método sem acrescentar nada: "`LoginController.login()` → executa o login".
 

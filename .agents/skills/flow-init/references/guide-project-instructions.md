@@ -31,6 +31,13 @@
 - Use `AGENTS.md` como arquivo canônico das instruções completas e compartilhadas do projeto.
 - Crie `CLAUDE.md` com `@AGENTS.md` para que o Claude Code importe o arquivo canônico.
 - O prefixo `@` é obrigatório: `AGENTS.md` sozinho é apenas texto, não um import.
+
+Quando `CLAUDE.md` não existir, seu conteúdo deve ser exatamente:
+
+```markdown
+@AGENTS.md
+```
+
 - Se `CLAUDE.md` já começar com `@AGENTS.md`, preserve abaixo do import apenas instruções realmente exclusivas do Claude Code.
 - Um symlink existente de `CLAUDE.md` para `AGENTS.md` também é válido e não precisa ser substituído.
 - Se `CLAUDE.md` existir sem o import, não o sobrescreva silenciosamente. Migre regras compartilháveis para `AGENTS.md`, preserve regras exclusivas abaixo do import e peça confirmação antes da reescrita.
@@ -179,7 +186,11 @@ Anexe ao final do `AGENTS.md` gerado, exatamente como abaixo. São as duas conve
 ```markdown
 ## 📖 Documentação de Flows
 
-Para qualquer feature ou fluxo, verifique a pasta `./docs/flow/`: leia os títulos dos arquivos `.md` disponíveis e, se algum for relevante para a tarefa atual, leia-o antes de implementar ou debugar. Invoque a skill `flow` para criar ou atualizar flows individuais.
+`./docs/flow/` documenta como cada feature funciona de ponta a ponta — arquivos, ordem de chamada e regras de negócio. `project-structure.md` é a visão geral do projeto.
+
+- **Antes de implementar ou debugar:** leia a linha `**Resumo:**` de cada `.md` em `./docs/flow/` e abra por inteiro os relevantes para a tarefa.
+- **Depois de alterar uma feature documentada:** atualize o flow dela no mesmo trabalho — arquivos, passo a passo, regras e frontmatter (`verified_at`, `source_commit`, `source_state`). Mudança de stack, estrutura ou comandos atualiza `project-structure.md`.
+- **Feature nova ou sem flow:** invoque a skill `flow` para documentá-la.
 
 ## 🧪 Teste funcional
 
@@ -190,7 +201,7 @@ Após implementar, não execute o projeto para validar o resultado (rodar o app,
 - Não pergunte se deve executar o projeto — só faça isso se o usuário pedir explicitamente
 ```
 
-Esta é a definição canônica da regra de teste funcional no projeto de destino: as skills contam com ela estar no `AGENTS.md` em vez de repeti-la a cada invocação.
+Estes blocos são a definição canônica no projeto de destino: com eles no `AGENTS.md`, o agente consulta e mantém os flows em toda tarefa sem depender de skill, e a regra de teste funcional não é repetida a cada invocação.
 
 ## 5. Hierarquia e disclosure progressivo
 
@@ -228,4 +239,4 @@ A sintaxe de invocação varia entre plataformas. Como `AGENTS.md` também é im
 - O conteúdo compartilhado evita sintaxes exclusivas de plataforma?
 - Instruções exclusivas do Claude Code, se existirem, estão abaixo do import e sem duplicação?
 - Não há contradições com arquivos em subdiretórios ou skills?
-- A seção de flows orienta a invocar a skill `flow` sem assumir sintaxe universal?
+- A seção de flows manda consultar os flows antes da tarefa, atualizá-los depois e invocar a skill `flow` para features sem flow, sem assumir sintaxe de plataforma?

@@ -15,13 +15,19 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 - `assets/css/layout/` — container, grid, header, footer
 - `assets/css/components/` — componentes BEM (button, nav, card, portfolio, brain-flows)
 - `assets/css/utilities/` — utilitários, sempre por último no cascade
-- `assets/js/main.js` — único arquivo JS; cada funcionalidade é uma função isolada chamada no `DOMContentLoaded`
+- `assets/js/main.js` — JS das funcionalidades; cada uma é uma função isolada chamada no `DOMContentLoaded`
+- `assets/js/locales.js` + `assets/js/i18n.js` — internacionalização (pt-BR, en, es): dicionários e motor de tradução (ver `docs/flow/i18n.md`)
 - `docs/flow/` — documentação de estrutura e flows do projeto
 - `.claude/skills/`, `.agents/skills/` — skills do Brain Flows (sincronizadas por script, não editar)
 
 ## Comandos
 
 - `F5` no VS Code — libera a porta 4173, sobe `python3 -m http.server 4173` e abre o Chrome (`.vscode/launch.json` + `tasks.json`)
+- Rodar manualmente (sem VS Code), na raiz do projeto, e abrir `http://localhost:4173`:
+  ```bash
+  lsof -ti tcp:4173 | xargs kill 2>/dev/null; python3 -m http.server 4173
+  ```
+  Não há build nem `npm install`. Para parar o servidor, `Ctrl+C` (ou rode só o `lsof ... | xargs kill`)
 - `./deploy.sh "mensagem"` — commit, push na `master`, espera o build do Pages e confirma HTTP 200 (exige `gh` autenticado)
 - `./sync-brain.sh` — sincroniza skills/agentes do repo `brain-flows` (script local, está no `.gitignore`)
 
@@ -32,6 +38,7 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 - **BEM**: `.card`, `.card__title`, `.card--featured`; toda classe reutilizável nasce em `components/`. Combinação de utilities repetida 3+ vezes vira componente
 - **Nova seção**: `<section id="nome" class="section">` dentro de `<main>`, reaproveitando `.container`/`.grid`; componente novo entra como `components/_nome.css` respeitando a ordem do cascade
 - **JS**: sem dependências; cada funcionalidade é uma função `init*` isolada chamada no `DOMContentLoaded` de `main.js`
+- **i18n**: todo texto visível novo recebe `data-i18n*` no HTML e a chave nos **três** idiomas de `locales.js`; o pt-BR fica também no HTML
 - **Acessibilidade**: respeitar `prefers-reduced-motion` e manter conteúdo visível sem JS (padrão do reveal: esconder só sob `html.js`)
 
 ## Gotchas

@@ -33,6 +33,7 @@ ir/<slug>/ (link curto: card do app → loja no celular; desktop escolhe a loja)
     ├── assets/css/layout/    → container, grid, header, footer
     ├── assets/css/components/→ button, nav, card, portfolio, brain-flows, app-directory, redirect (BEM)
     ├── assets/css/utilities/ → utilitários (sempre por último no cascade)
+    ├── assets/js/locales.js + i18n.js → internacionalização pt-BR/en/es (ver docs/flow/i18n.md)
     └── assets/js/main.js     → initStoreRedirect, initMobileNav, initHeader, initReveal, initCommandCopy, initShortLinkCopy, initAppDirectory, setCurrentYear
 ```
 
@@ -59,9 +60,10 @@ _Comportamentos JS são funções isoladas dentro de `assets/js/main.js`, não m
 | Tokens | `assets/css/base/_tokens.css` | Variáveis CSS de cor, tipografia, espaçamento, breakpoints |
 | Base | `assets/css/base/_reset.css`, `_base.css` | Normalização e estilos globais de tags puras |
 | Layout | `assets/css/layout/` | Primitivos estruturais: `_container.css`, `_grid.css`, `_header.css`, `_footer.css` |
-| Componentes | `assets/css/components/` | Peças reutilizáveis BEM: `_button.css`, `_nav.css`, `_card.css`, `_portfolio.css`, `_brain-flows.css`, `_app-directory.css`, `_redirect.css` |
+| Componentes | `assets/css/components/` | Peças reutilizáveis BEM: `_button.css`, `_nav.css`, `_lang-switch.css`, `_card.css`, `_portfolio.css`, `_brain-flows.css`, `_app-directory.css`, `_redirect.css` |
 | Utilities | `assets/css/utilities/_utilities.css` | Classes utilitárias, últimas no cascade |
-| JS | `assets/js/main.js` | Único arquivo JS, compartilhado por todas as páginas: redirecionamento de `ir/<slug>/` para a loja, nav mobile, header no scroll, reveal via IntersectionObserver, botão de copiar comando de instalação, cópia do link curto no detalhe de `apps.html`, alternância lista/detalhe de `apps.html`, ano atual |
+| JS | `assets/js/locales.js`, `assets/js/i18n.js` | Dicionários e motor de tradução (pt-BR, en, es) com seletor de idioma no header; escolha salva em `localStorage` |
+| JS | `assets/js/main.js` | JS das funcionalidades, compartilhado por todas as páginas: redirecionamento de `ir/<slug>/` para a loja, nav mobile, header no scroll, reveal via IntersectionObserver, botão de copiar comando de instalação, cópia do link curto no detalhe de `apps.html`, alternância lista/detalhe de `apps.html`, ano atual |
 | Imagens | `assets/img/` | Favicon, hero (webp/png), og-cover, ícones dos apps em `apps/` |
 
 ## Configuração
