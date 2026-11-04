@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="assets/css/components/_nav.css?v=20261104">
   <link rel="stylesheet" href="assets/css/components/_card.css?v=20261104">
   <link rel="stylesheet" href="assets/css/components/_portfolio.css?v=20261104">
-  <link rel="stylesheet" href="assets/css/components/_brain-flows.css?v=20261104">
+  <link rel="stylesheet" href="assets/css/components/_certification.css?v=20261104">
   <link rel="stylesheet" href="assets/css/components/_app-directory.css?v=20261104">
   <link rel="stylesheet" href="assets/css/components/_lang-switch.css?v=20261104">
   <link rel="stylesheet" href="assets/css/utilities/_utilities.css?v=20261104">
@@ -63,7 +63,7 @@
         <ul class="nav__list">
           <li><a href="#apps" class="nav__link" data-i18n="nav.apps">Aplicativos</a></li>
           <li><a href="#plugins" class="nav__link">Open Source</a></li>
-          <li><a href="#brain-flows" class="nav__link">Brain Flows</a></li>
+          <li><a href="#certificacao" class="nav__link" data-i18n="nav.certification">Certificação</a></li>
           <li><a href="#sobre" class="nav__link" data-i18n="nav.about">Sobre</a></li>
           <li><a href="#contato" class="nav__link" data-i18n="nav.contact">Contato</a></li>
         </ul>
@@ -232,62 +232,36 @@
       </div>
     </section>
 
-    <section class="section brain-section" id="brain-flows">
+    <section class="section cert-section" id="certificacao">
       <div class="container">
         <div class="collection-heading" data-reveal>
           <div>
-            <p class="eyebrow" data-i18n="brain.eyebrow">Open Source no GitHub</p>
-            <h2 data-i18n-html="brain.title">Um workflow para agentes que <em>documentam antes de codar.</em></h2>
+            <p class="eyebrow" data-i18n="cert.eyebrow">Certificação Anthropic</p>
+            <h2 data-i18n-html="cert.title">Certificado oficialmente em <em>arquitetura com Claude.</em></h2>
           </div>
-          <p data-i18n="brain.intro">Brain Flows é um conjunto de skills para agentes de IA — Claude Code e Codex — que transforma cada mudança em um processo claro e retomável: mapear o projeto, aprovar o design, planejar e executar passo a passo.</p>
+          <p data-i18n="cert.intro">André Salvador conquistou a certificação Claude Certified Architect – Foundations, emitida pela Anthropic, que comprova o domínio dos fundamentos para projetar e construir soluções com Claude — do Claude Code no dia a dia de desenvolvimento à integração com a API.</p>
         </div>
 
-        <div class="brain-layout">
-          <article class="brain-highlight" data-reveal>
-            <p class="brain-highlight__top">Claude Code · Codex</p>
-            <h3>brain_<wbr>flows</h3>
-            <p data-i18n-html="brain.highlight">O contexto e o progresso de cada mudança ficam versionados junto com o código, em <code>docs/flow/</code> e <code>docs/plan/</code> — nenhuma etapa depende do histórico da conversa.</p>
-            <div class="brain-command"><code>/plugin marketplace add andrelucassvt/brain-flows</code><button class="brain-command__copy" type="button" data-copy aria-label="Copiar comando de instalação" data-i18n-attr="aria-label:brain.copyAria"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg><span aria-live="polite" data-i18n="brain.copy">Copiar</span></button></div>
-            <a href="https://github.com/andrelucassvt/brain-flows" target="_blank" rel="noopener" aria-label="Abrir Brain Flows no GitHub" data-i18n="brain.github" data-i18n-attr="aria-label:brain.githubAria">Ver no GitHub <span>↗</span></a>
+        <div class="cert-layout">
+          <article class="cert-card" data-reveal>
+            <p class="cert-card__top">Anthropic · Claude Code</p>
+            <h3>Claude Certified Architect <span>Foundations</span></h3>
+            <p class="cert-card__desc" data-i18n="cert.desc">Uma credencial oficial que respalda o uso de agentes de IA no processo da AS Software, com contexto, planejamento e revisão em cada entrega.</p>
+            <dl class="cert-card__facts">
+              <div><dt data-i18n="cert.issued">Emitido em</dt><dd><time datetime="2026-06-09" data-i18n="cert.issuedDate">09 jun 2026</time></dd></div>
+              <div><dt data-i18n="cert.expires">Válido até</dt><dd><time datetime="2027-06-09" data-i18n="cert.expiresDate">09 jun 2027</time></dd></div>
+            </dl>
+            <div class="cert-card__links">
+              <a href="https://www.credly.com/badges/d67f6bad-02b7-4066-bd5b-c00840197a53" target="_blank" rel="noopener" aria-label="Verificar a certificação no Credly" data-i18n="cert.verify" data-i18n-attr="aria-label:cert.verifyAria">Verificar no Credly <span>↗</span></a>
+              <a href="assets/docs/claude-certified-architect-foundations.pdf" target="_blank" rel="noopener" aria-label="Abrir o certificado em PDF" data-i18n="cert.pdf" data-i18n-attr="aria-label:cert.pdfAria">Ver certificado em PDF <span>↗</span></a>
+            </div>
           </article>
 
-          <ol class="skill-list">
-            <li class="skill-item" data-reveal>
-              <span class="skill-item__index">01</span>
-              <div>
-                <h3>flow-init</h3>
-                <p data-i18n-html="brain.skill1">Analisa a estrutura real do repositório e cria o mapa do projeto em <code>docs/flow/</code>.</p>
-              </div>
-            </li>
-            <li class="skill-item" data-reveal>
-              <span class="skill-item__index">02</span>
-              <div>
-                <h3>flow</h3>
-                <p data-i18n-html="brain.skill2">Documenta como uma feature funciona de ponta a ponta: arquivos, ordem de execução e regras de negócio.</p>
-              </div>
-            </li>
-            <li class="skill-item" data-reveal>
-              <span class="skill-item__index">03</span>
-              <div>
-                <h3>brainstorming</h3>
-                <p data-i18n-html="brain.skill3">Explora a mudança, lê os flows relacionados e propõe um design que só vira código após aprovação.</p>
-              </div>
-            </li>
-            <li class="skill-item" data-reveal>
-              <span class="skill-item__index">04</span>
-              <div>
-                <h3>writing-plan</h3>
-                <p data-i18n-html="brain.skill4">Transforma o design aprovado em um plano acionável em <code>docs/plan/</code>, com fases e verificações.</p>
-              </div>
-            </li>
-            <li class="skill-item" data-reveal>
-              <span class="skill-item__index">05</span>
-              <div>
-                <h3>executing-plan</h3>
-                <p data-i18n-html="brain.skill5">Executa o plano uma tarefa por vez, verifica cada etapa e atualiza os flows afetados ao final.</p>
-              </div>
-            </li>
-          </ol>
+          <figure class="cert-preview" data-reveal>
+            <a href="assets/docs/claude-certified-architect-foundations.pdf" target="_blank" rel="noopener" aria-label="Abrir o certificado em PDF" data-i18n-attr="aria-label:cert.pdfAria">
+              <img src="assets/img/claude-certified-architect.webp" width="1400" height="1082" loading="lazy" decoding="async" alt="Certificado Claude Certified Architect – Foundations emitido pela Anthropic" data-i18n-attr="alt:cert.imageAlt">
+            </a>
+          </figure>
         </div>
       </div>
     </section>
@@ -332,7 +306,7 @@
       </a>
       <p data-i18n="footer.tagline">Aplicativos multiplataforma e ferramentas para desenvolvedores.</p>
       <div class="site-footer__nav">
-        <a href="#apps" data-i18n="nav.apps">Aplicativos</a><a href="apps.html" data-i18n="nav.allApps">Todos os apps</a><a href="#plugins" data-i18n="footer.plugins">Plugins Open Source</a><a href="#brain-flows">Brain Flows</a><a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#apps" data-i18n="nav.apps">Aplicativos</a><a href="apps.html" data-i18n="nav.allApps">Todos os apps</a><a href="#plugins" data-i18n="footer.plugins">Plugins Open Source</a><a href="#certificacao" data-i18n="nav.certification">Certificação</a><a href="#sobre" data-i18n="nav.about">Sobre</a>
       </div>
       <a class="site-footer__email" href="mailto:anl.software.contato@gmail.com">anl.software.contato@gmail.com</a>
     </div>

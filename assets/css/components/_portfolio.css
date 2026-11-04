@@ -61,7 +61,7 @@
   color: var(--color-text-muted);
 }
 
-/* Cabeçalho de coleção (apps, brain flows, apps.html) */
+/* Cabeçalho de coleção (apps, certificação, apps.html) */
 .collection-heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);

@@ -10,10 +10,10 @@ Site estático de página única (scroll) em HTML + CSS puro com JS vanilla mín
 
 ## Estrutura
 
-- `index.html` — página única; todas as seções (hero, capabilities, apps, plugins, sobre, contato) e a ordem de carregamento dos CSS no `<head>`
+- `index.html` — página única; todas as seções (hero, capabilities, apps, plugins, certificação, sobre, contato) e a ordem de carregamento dos CSS no `<head>`
 - `assets/css/base/` — tokens (variáveis CSS), reset, estilos globais de tags
 - `assets/css/layout/` — container, grid, header, footer
-- `assets/css/components/` — componentes BEM (button, nav, card, portfolio, brain-flows)
+- `assets/css/components/` — componentes BEM (button, nav, card, portfolio, certification, app-directory)
 - `assets/css/utilities/` — utilitários, sempre por último no cascade
 - `assets/js/main.js` — JS das funcionalidades; cada uma é uma função isolada chamada no `DOMContentLoaded`
 - `assets/js/locales.js` + `assets/js/i18n.js` — internacionalização (pt-BR, en, es): dicionários e motor de tradução (ver `docs/flow/i18n.md`)

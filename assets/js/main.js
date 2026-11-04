@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initHeader();
   initReveal();
-  initCommandCopy();
   initShortLinkCopy();
   initAppDirectory();
   setCurrentYear();
@@ -105,32 +104,6 @@ function initStoreRedirect() {
 
   const link = redirect.querySelector(`[data-store="${store}"]`);
   if (link) window.location.replace(link.href);
-}
-
-function initCommandCopy() {
-  const buttons = document.querySelectorAll("[data-copy]");
-  if (!buttons.length) return;
-
-  buttons.forEach((button) => {
-    const label = button.querySelector("span");
-    const defaultLabel = label ? label.textContent : "";
-    let timeout;
-
-    button.addEventListener("click", async () => {
-      const command = button.closest(".brain-command")?.querySelector("code")?.textContent.trim();
-      if (!command) return;
-
-      await copyText(command);
-
-      button.classList.add("is-copied");
-      if (label) label.textContent = t("common.copied", "Copiado");
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        button.classList.remove("is-copied");
-        if (label) label.textContent = t("brain.copy", defaultLabel);
-      }, 1600);
-    });
-  });
 }
 
 async function copyText(text) {
