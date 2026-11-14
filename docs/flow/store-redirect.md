@@ -60,7 +60,7 @@ Cada app tem um link curto próprio em `ir/<slug>/` (`luma`, `celllab`, `flora`,
 
   | Link curto | App | Detalhe em `apps.html` |
   |---|---|---|
-  | `/ir/luma/` | Luma create | `#app-detail-luma` |
+  | `/ir/luma/` | Lucky create | `#app-detail-luma` |
   | `/ir/celllab/` | CellLab + | `#app-detail-celllab` |
   | `/ir/flora/` | Flora | `#app-detail-flora` |
   | `/ir/salvaterra/` | Salvaterra FM | `#app-detail-radio` |

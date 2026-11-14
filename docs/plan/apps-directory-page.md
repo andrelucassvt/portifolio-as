@@ -33,13 +33,13 @@ Hoje o site é uma página única (`index.html`) e os aplicativos aparecem apena
 
 | App | Categoria | Ícone | Wash | Google Play | App Store |
 |-----|-----------|-------|------|-------------|-----------|
-| Luma create | IA criativa | `assets/img/apps/luma-create.webp` | `#ddd9d2` | `https://play.google.com/store/apps/details?id=com.andre.luma_vid` | `https://apps.apple.com/br/app/luma-create-ai-studio/id6757760221` |
+| Lucky create | IA criativa | `assets/img/apps/luma-create.webp` | `#ddd9d2` | `https://play.google.com/store/apps/details?id=com.andre.luma_vid` | `https://apps.apple.com/br/app/luma-create-ai-studio/id6757760221` |
 | CellLab + | Ciência | `assets/img/apps/celllab.webp` | `#d6ebe3` | `https://play.google.com/store/apps/details?id=com.andre.projectlab` | `https://apps.apple.com/br/app/celllab/id6499239786` |
 | Flora | Bem-estar | `assets/img/apps/flora.webp` | `#f0dddd` | `https://play.google.com/store/apps/details?id=com.andre.Cycla` | `https://apps.apple.com/br/app/flora-calend%C3%A1rio-menstrual/id6789702093` |
 | Salvaterra FM | Comunicação | `assets/img/apps/salvaterra-fm.webp` | `#eee0d8` | `https://play.google.com/store/apps/details?id=com.andre.radiosalvaterrafm` | `https://apps.apple.com/br/app/salvaterra-fm/id6443883925` |
 
 Descrições (copiar literalmente de `index.html`):
-- **Luma create:** "Transforma descrições em vídeos e imagens com inteligência artificial, com opções de qualidade para diferentes ideias e formatos."
+- **Lucky create:** "Transforma descrições em vídeos e imagens com inteligência artificial, com opções de qualidade para diferentes ideias e formatos."
 - **CellLab +:** "Um laboratório digital para planejar experimentos, analisar viabilidade celular por MTT e apoiar rotinas de contagem e plaqueamento."
 - **Flora:** "Acompanha ciclo, sintomas, humor e previsões de forma acolhedora, mantendo os dados pessoais armazenados no próprio dispositivo."
 - **Salvaterra FM:** "Leva a programação da rádio comunitária 87,9 FM de Salvaterra, na Ilha de Marajó, para ouvintes em qualquer lugar."
@@ -50,7 +50,7 @@ Os slugs abaixo amarram HTML, CSS e JS — use exatamente estes:
 
 | App | `id` do detalhe | Modificador BEM |
 |-----|-----------------|-----------------|
-| Luma create | `app-detail-luma` | `--luma` |
+| Lucky create | `app-detail-luma` | `--luma` |
 | CellLab + | `app-detail-celllab` | `--celllab` |
 | Flora | `app-detail-flora` | `--flora` |
 | Salvaterra FM | `app-detail-radio` | `--radio` |

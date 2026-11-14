@@ -15,7 +15,7 @@ window.LOCALES = {
     "meta.home.ogDescription": "Apps multiplataforma e plugins Flutter desenvolvidos por André Salvador.",
     "meta.home.ogImageAlt": "AS Software — ilustração de um celular com o símbolo </> cercado por flores",
     "meta.apps.title": "Aplicativos — AS Software",
-    "meta.apps.description": "Todos os aplicativos da AS Software para Android e iOS: Luma create, CellLab +, Flora, Salvaterra FM e Arrow Army.",
+    "meta.apps.description": "Todos os aplicativos da AS Software para Android e iOS: Lucky create, CellLab +, Flora, Salvaterra FM e Arrow Army.",
 
     "nav.label": "Navegação principal",
     "nav.open": "Abrir menu",
@@ -120,7 +120,7 @@ window.LOCALES = {
     "meta.home.ogDescription": "Cross-platform apps and Flutter plugins built by André Salvador.",
     "meta.home.ogImageAlt": "AS Software — illustration of a phone with the </> symbol surrounded by flowers",
     "meta.apps.title": "Apps — AS Software",
-    "meta.apps.description": "All AS Software apps for Android and iOS: Luma create, CellLab +, Flora, Salvaterra FM and Arrow Army.",
+    "meta.apps.description": "All AS Software apps for Android and iOS: Lucky create, CellLab +, Flora, Salvaterra FM and Arrow Army.",
 
     "nav.label": "Main navigation",
     "nav.open": "Open menu",
@@ -225,7 +225,7 @@ window.LOCALES = {
     "meta.home.ogDescription": "Apps multiplataforma y plugins de Flutter desarrollados por André Salvador.",
     "meta.home.ogImageAlt": "AS Software — ilustración de un celular con el símbolo </> rodeado de flores",
     "meta.apps.title": "Aplicaciones — AS Software",
-    "meta.apps.description": "Todas las aplicaciones de AS Software para Android e iOS: Luma create, CellLab +, Flora, Salvaterra FM y Arrow Army.",
+    "meta.apps.description": "Todas las aplicaciones de AS Software para Android e iOS: Lucky create, CellLab +, Flora, Salvaterra FM y Arrow Army.",
 
     "nav.label": "Navegación principal",
     "nav.open": "Abrir menú",
