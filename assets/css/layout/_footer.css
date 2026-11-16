@@ -13,8 +13,6 @@
 }
 
 .brand--footer .brand__name { color: var(--color-on-dark); }
-.brand--footer .brand__name strong { color: var(--color-on-dark-accent); }
-.brand--footer .brand__mark { stroke: var(--color-on-dark-accent); }
 
 .site-footer__top > p {
   max-width: 23rem;
